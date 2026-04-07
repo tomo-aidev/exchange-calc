@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">汇率计算器</string>
+    <string name="app_title">汇率计算器</string>
+    <string name="from_currency">从</string>
+    <string name="to_currency">到</string>
+    <string name="save">保存</string>
+    <string name="saved">已保存！</string>
+    <string name="history">历史记录</string>
+    <string name="settings">设置</string>
+    <string name="refresh_rates">刷新汇率</string>
+    <string name="loading_rates">加载汇率中…</string>
+    <string name="no_rates">暂无汇率数据</string>
+    <string name="no_history">暂无记录</string>
+    <string name="no_history_description">保存的兑换记录将显示在这里</string>
+    <string name="back">返回</string>
+    <string name="close">关闭</string>
+    <string name="delete_all">全部删除</string>
+    <string name="default_currencies">默认货币</string>
+    <string name="appearance">外观</string>
+    <string name="dark_mode">深色模式</string>
+    <string name="purchase">购买</string>
+    <string name="pro_unlocked">已解锁专业版</string>
+    <string name="restore_purchase">恢复购买</string>
+    <string name="restore_success">购买已成功恢复！</string>
+    <string name="restore_failed">未找到可恢复的购买</string>
+    <string name="about">关于</string>
+    <string name="rate_app">给应用评分</string>
+    <string name="version">版本</string>
+    <string name="paywall_title">升级为专业版</string>
+    <string name="paywall_feature_unlimited">无限次兑换</string>
+    <string name="paywall_feature_fast">快速简便的货币兑换</string>
+    <string name="paywall_one_time">一次购买，永久使用</string>
+    <string name="paywall_purchase">购买</string>
+</resources>

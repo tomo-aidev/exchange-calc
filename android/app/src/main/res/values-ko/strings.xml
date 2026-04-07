@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">환율 계산기</string>
+    <string name="app_title">환율 계산기</string>
+    <string name="from_currency">변환 전</string>
+    <string name="to_currency">변환 후</string>
+    <string name="save">저장</string>
+    <string name="saved">저장됨!</string>
+    <string name="history">기록</string>
+    <string name="settings">설정</string>
+    <string name="refresh_rates">환율 업데이트</string>
+    <string name="loading_rates">환율 로딩 중…</string>
+    <string name="no_rates">환율 데이터 없음</string>
+    <string name="no_history">기록 없음</string>
+    <string name="no_history_description">저장된 환산 결과가 여기에 표시됩니다</string>
+    <string name="back">뒤로</string>
+    <string name="close">닫기</string>
+    <string name="delete_all">전체 삭제</string>
+    <string name="default_currencies">기본 통화</string>
+    <string name="appearance">외관</string>
+    <string name="dark_mode">다크 모드</string>
+    <string name="purchase">구매</string>
+    <string name="pro_unlocked">프로 잠금 해제됨</string>
+    <string name="restore_purchase">구매 복원</string>
+    <string name="restore_success">구매가 복원되었습니다!</string>
+    <string name="restore_failed">복원할 구매를 찾을 수 없습니다</string>
+    <string name="about">정보</string>
+    <string name="rate_app">앱 평가하기</string>
+    <string name="version">버전</string>
+    <string name="paywall_title">프로로 업그레이드</string>
+    <string name="paywall_feature_unlimited">무제한 환산</string>
+    <string name="paywall_feature_fast">빠르고 쉬운 환율 계산</string>
+    <string name="paywall_one_time">일회 구매, 영구 사용</string>
+    <string name="paywall_purchase">구매하기</string>
+</resources>

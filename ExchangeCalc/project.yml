@@ -1,0 +1,56 @@
+name: ExchangeCalc
+options:
+  bundleIdPrefix: com.exchangecalc
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+packages:
+  GoogleMobileAds:
+    url: https://github.com/googleads/swift-package-manager-google-mobile-ads
+    version: "13.2.0"
+
+targets:
+  ExchangeCalc:
+    type: application
+    platform: iOS
+    sources:
+      - ExchangeCalc
+    dependencies:
+      - package: GoogleMobileAds
+        product: GoogleMobileAds
+    entitlements:
+      path: ExchangeCalc/ExchangeCalc.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.exchangecalc.app
+        INFOPLIST_FILE: ExchangeCalc/Info.plist
+        CODE_SIGN_ENTITLEMENTS: ExchangeCalc/ExchangeCalc.entitlements
+        SWIFT_EMIT_LOC_STRINGS: "YES"
+        ASSETCATALOG_COMPILER_APPICON_NAME: "AppIcon"
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: "AccentColor"
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        SUPPORTS_MACCATALYST: false
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: "Automatic"
+        DEVELOPMENT_TEAM: "QCT6H2SS5N"
+        VALIDATE_PRODUCT: "NO"
+
+  ExchangeCalcTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - ExchangeCalcTests
+    dependencies:
+      - target: ExchangeCalc
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.exchangecalc.tests
+        GENERATE_INFOPLIST_FILE: "YES"

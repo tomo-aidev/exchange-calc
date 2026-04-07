@@ -1,0 +1,7 @@
+name = "quickrate-api"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "RATES"
+id = "3b8c205ca11d49d692f43d679289716b"

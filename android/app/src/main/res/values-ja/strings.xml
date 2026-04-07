@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">両替計算</string>
+    <string name="app_title">両替計算</string>
+    <string name="from_currency">変換元</string>
+    <string name="to_currency">変換先</string>
+    <string name="save">保存</string>
+    <string name="saved">保存しました</string>
+    <string name="history">履歴</string>
+    <string name="settings">設定</string>
+    <string name="refresh_rates">レート更新</string>
+    <string name="loading_rates">レート取得中…</string>
+    <string name="no_rates">レートを取得できません</string>
+    <string name="no_history">履歴なし</string>
+    <string name="no_history_description">保存した変換結果がここに表示されます</string>
+    <string name="back">戻る</string>
+    <string name="close">閉じる</string>
+    <string name="delete_all">全削除</string>
+    <string name="default_currencies">デフォルト通貨</string>
+    <string name="appearance">外観</string>
+    <string name="dark_mode">ダークモード</string>
+    <string name="purchase">購入</string>
+    <string name="pro_unlocked">Pro版解除済み</string>
+    <string name="restore_purchase">購入を復元</string>
+    <string name="restore_success">購入を復元しました！</string>
+    <string name="restore_failed">復元する購入が見つかりません</string>
+    <string name="about">アプリ情報</string>
+    <string name="rate_app">アプリを評価する</string>
+    <string name="version">バージョン</string>
+    <string name="paywall_title">Pro版にアップグレード</string>
+    <string name="paywall_feature_unlimited">無制限の変換</string>
+    <string name="paywall_feature_fast">素早く簡単な両替計算</string>
+    <string name="paywall_one_time">買い切り・ずっと使える</string>
+    <string name="paywall_purchase">購入する</string>
+</resources>

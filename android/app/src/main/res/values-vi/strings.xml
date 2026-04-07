@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Máy tính tỷ giá</string>
+    <string name="app_title">Máy tính tỷ giá</string>
+    <string name="from_currency">Từ</string>
+    <string name="to_currency">Đến</string>
+    <string name="save">Lưu</string>
+    <string name="saved">Đã lưu!</string>
+    <string name="history">Lịch sử</string>
+    <string name="settings">Cài đặt</string>
+    <string name="refresh_rates">Cập nhật tỷ giá</string>
+    <string name="loading_rates">Đang tải tỷ giá…</string>
+    <string name="no_rates">Không có dữ liệu tỷ giá</string>
+    <string name="no_history">Không có lịch sử</string>
+    <string name="no_history_description">Các chuyển đổi đã lưu sẽ hiển thị ở đây</string>
+    <string name="back">Quay lại</string>
+    <string name="close">Đóng</string>
+    <string name="delete_all">Xóa tất cả</string>
+    <string name="default_currencies">Tiền tệ mặc định</string>
+    <string name="appearance">Giao diện</string>
+    <string name="dark_mode">Chế độ tối</string>
+    <string name="purchase">Mua</string>
+    <string name="pro_unlocked">Đã mở khóa Pro</string>
+    <string name="restore_purchase">Khôi phục mua hàng</string>
+    <string name="restore_success">Khôi phục mua hàng thành công!</string>
+    <string name="restore_failed">Không tìm thấy giao dịch để khôi phục</string>
+    <string name="about">Giới thiệu</string>
+    <string name="rate_app">Đánh giá ứng dụng</string>
+    <string name="version">Phiên bản</string>
+    <string name="paywall_title">Nâng cấp lên Pro</string>
+    <string name="paywall_feature_unlimited">Chuyển đổi không giới hạn</string>
+    <string name="paywall_feature_fast">Đổi tiền nhanh chóng và dễ dàng</string>
+    <string name="paywall_one_time">Mua một lần, dùng mãi mãi</string>
+    <string name="paywall_purchase">Mua</string>
+</resources>

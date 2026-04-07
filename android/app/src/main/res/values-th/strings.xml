@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">เครื่องคำนวณอัตราแลกเปลี่ยน</string>
+    <string name="app_title">เครื่องคำนวณอัตราแลกเปลี่ยน</string>
+    <string name="from_currency">จาก</string>
+    <string name="to_currency">เป็น</string>
+    <string name="save">บันทึก</string>
+    <string name="saved">บันทึกแล้ว!</string>
+    <string name="history">ประวัติ</string>
+    <string name="settings">ตั้งค่า</string>
+    <string name="refresh_rates">รีเฟรชอัตรา</string>
+    <string name="loading_rates">กำลังโหลดอัตรา…</string>
+    <string name="no_rates">ไม่มีข้อมูลอัตรา</string>
+    <string name="no_history">ไม่มีประวัติ</string>
+    <string name="no_history_description">การแปลงที่บันทึกไว้จะแสดงที่นี่</string>
+    <string name="back">กลับ</string>
+    <string name="close">ปิด</string>
+    <string name="delete_all">ลบทั้งหมด</string>
+    <string name="default_currencies">สกุลเงินเริ่มต้น</string>
+    <string name="appearance">ลักษณะ</string>
+    <string name="dark_mode">โหมดมืด</string>
+    <string name="purchase">ซื้อ</string>
+    <string name="pro_unlocked">ปลดล็อคโปรแล้ว</string>
+    <string name="restore_purchase">กู้คืนการซื้อ</string>
+    <string name="restore_success">กู้คืนการซื้อสำเร็จ!</string>
+    <string name="restore_failed">ไม่พบการซื้อที่จะกู้คืน</string>
+    <string name="about">เกี่ยวกับ</string>
+    <string name="rate_app">ให้คะแนนแอป</string>
+    <string name="version">เวอร์ชัน</string>
+    <string name="paywall_title">อัปเกรดเป็นโปร</string>
+    <string name="paywall_feature_unlimited">แปลงได้ไม่จำกัด</string>
+    <string name="paywall_feature_fast">แลกเปลี่ยนเงินตราอย่างรวดเร็ว</string>
+    <string name="paywall_one_time">ซื้อครั้งเดียว ใช้ตลอดไป</string>
+    <string name="paywall_purchase">ซื้อ</string>
+</resources>

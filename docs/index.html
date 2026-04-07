@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickRate - Travel Currency Exchange Calculator</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; color: #333; }
+.hero { background: linear-gradient(135deg, #005BB2, #003d7a); color: white; text-align: center; padding: 60px 20px; }
+.hero img { width: 120px; border-radius: 24px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+.hero h1 { font-size: 2.5em; margin-bottom: 8px; }
+.hero p { font-size: 1.2em; opacity: 0.9; margin-bottom: 24px; }
+.badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.badges a img { height: 50px; }
+.features { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+.features h2 { text-align: center; color: #005BB2; margin-bottom: 24px; }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.feature-card { background: #f8f9fa; border-radius: 12px; padding: 20px; text-align: center; }
+.feature-card .icon { font-size: 2em; margin-bottom: 8px; }
+.feature-card h3 { margin-bottom: 8px; color: #005BB2; }
+.footer { text-align: center; padding: 40px 20px; background: #f0f0f0; margin-top: 40px; }
+.footer a { color: #005BB2; margin: 0 12px; }
+.lang-bar { background: #003d7a; padding: 8px; text-align: center; }
+.lang-bar a { color: rgba(255,255,255,0.8); margin: 0 8px; text-decoration: none; font-size: 0.9em; }
+.lang-bar a:hover { color: white; }
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+<a href="#" onclick="setLang('en')">English</a>
+<a href="#" onclick="setLang('ja')">日本語</a>
+<a href="#" onclick="setLang('ko')">한국어</a>
+<a href="#" onclick="setLang('zh')">中文</a>
+<a href="#" onclick="setLang('th')">ไทย</a>
+<a href="#" onclick="setLang('vi')">Tiếng Việt</a>
+<a href="#" onclick="setLang('ru')">Русский</a>
+</div>
+
+<div class="hero">
+<img src="icon.png" alt="QuickRate">
+<h1 id="t-title">QuickRate</h1>
+<p id="t-subtitle">Travel Currency Exchange Calculator</p>
+</div>
+
+<div class="features">
+<h2 id="t-features">Features</h2>
+<div class="feature-grid">
+<div class="feature-card">
+<div class="icon">⚡</div>
+<h3 id="t-f1-title">Instant Launch</h3>
+<p id="t-f1-desc">No loading screens. Start calculating immediately.</p>
+</div>
+<div class="feature-card">
+<div class="icon">🌍</div>
+<h3 id="t-f2-title">19+ Currencies</h3>
+<p id="t-f2-desc">Major currencies from around the world including Asia, Europe, and more.</p>
+</div>
+<div class="feature-card">
+<div class="icon">📊</div>
+<h3 id="t-f3-title">90-Day Chart</h3>
+<p id="t-f3-desc">View exchange rate trends with interactive charts.</p>
+</div>
+<div class="feature-card">
+<div class="icon">✏️</div>
+<h3 id="t-f4-title">Manual Rate</h3>
+<p id="t-f4-desc">Enter your own exchange rate for precise calculations.</p>
+</div>
+<div class="feature-card">
+<div class="icon">🌐</div>
+<h3 id="t-f5-title">8 Languages</h3>
+<p id="t-f5-desc">English, Japanese, Korean, Chinese, Thai, Vietnamese, Russian and more.</p>
+</div>
+<div class="feature-card">
+<div class="icon">📶</div>
+<h3 id="t-f6-title">Offline Ready</h3>
+<p id="t-f6-desc">Works offline with cached rates. Always available when you travel.</p>
+</div>
+</div>
+</div>
+
+<div class="footer">
+<a href="terms.html">Terms of Service</a>
+<a href="privacy.html">Privacy Policy</a>
+<p style="margin-top: 16px; color: #888; font-size: 0.9em;">&copy; 2026 QuickRate</p>
+</div>
+
+<script>
+const translations = {
+  en: { title: "QuickRate", subtitle: "Travel Currency Exchange Calculator", features: "Features", f1t: "Instant Launch", f1d: "No loading screens. Start calculating immediately.", f2t: "19+ Currencies", f2d: "Major currencies from around the world.", f3t: "90-Day Chart", f3d: "View exchange rate trends with interactive charts.", f4t: "Manual Rate", f4d: "Enter your own exchange rate for precise calculations.", f5t: "8 Languages", f5d: "English, Japanese, Korean, Chinese, Thai, Vietnamese, Russian.", f6t: "Offline Ready", f6d: "Works offline with cached rates." },
+  ja: { title: "通貨両替電卓", subtitle: "旅行用 為替レート通貨換算", features: "機能", f1t: "即起動", f1d: "ローディング画面なし。すぐに計算開始。", f2t: "19以上の通貨", f2d: "世界の主要通貨に対応。", f3t: "90日チャート", f3d: "インタラクティブなチャートでレート推移を確認。", f4t: "手動レート", f4d: "自分でレートを入力して計算可能。", f5t: "8言語対応", f5d: "英語、日本語、韓国語、中国語、タイ語、ベトナム語、ロシア語。", f6t: "オフライン対応", f6d: "キャッシュされたレートでオフラインでも使える。" },
+  ko: { title: "환전 계산기", subtitle: "여행용 환율 계산기", features: "기능", f1t: "즉시 실행", f1d: "로딩 없이 바로 계산.", f2t: "19+ 통화", f2d: "전 세계 주요 통화 지원.", f3t: "90일 차트", f3d: "환율 추이를 차트로 확인.", f4t: "수동 환율", f4d: "직접 환율을 입력하여 계산.", f5t: "8개 언어", f5d: "한국어 포함 8개 언어 지원.", f6t: "오프라인", f6d: "캐시된 환율로 오프라인 사용 가능." },
+  zh: { title: "货币兑换计算器", subtitle: "旅行货币兑换计算器", features: "功能", f1t: "即时启动", f1d: "无加载画面，立即开始计算。", f2t: "19+货币", f2d: "支持全球主要货币。", f3t: "90天图表", f3d: "查看汇率走势图。", f4t: "手动汇率", f4d: "输入自定义汇率进行计算。", f5t: "8种语言", f5d: "支持中文等8种语言。", f6t: "离线可用", f6d: "使用缓存汇率离线工作。" },
+  th: { title: "เครื่องคิดเลขแลกเงิน", subtitle: "เครื่องคำนวณแลกเงินสำหรับเดินทาง", features: "คุณสมบัติ", f1t: "เปิดทันที", f1d: "ไม่มีหน้าโหลด เริ่มคำนวณได้ทันที", f2t: "19+ สกุลเงิน", f2d: "สกุลเงินหลักทั่วโลก", f3t: "กราฟ 90 วัน", f3d: "ดูแนวโน้มอัตราแลกเปลี่ยน", f4t: "อัตราด้วยตนเอง", f4d: "ป้อนอัตราแลกเปลี่ยนเอง", f5t: "8 ภาษา", f5d: "รองรับ 8 ภาษา", f6t: "ใช้ออฟไลน์", f6d: "ใช้งานได้แม้ไม่มีอินเทอร์เน็ต" },
+  vi: { title: "Máy tính đổi tiền", subtitle: "Máy tính đổi tiền du lịch", features: "Tính năng", f1t: "Khởi động nhanh", f1d: "Không có màn hình tải. Tính toán ngay.", f2t: "19+ loại tiền", f2d: "Các loại tiền tệ chính trên thế giới.", f3t: "Biểu đồ 90 ngày", f3d: "Xem xu hướng tỷ giá.", f4t: "Tỷ giá thủ công", f4d: "Nhập tỷ giá riêng để tính toán.", f5t: "8 ngôn ngữ", f5d: "Hỗ trợ 8 ngôn ngữ.", f6t: "Ngoại tuyến", f6d: "Hoạt động ngoại tuyến với tỷ giá đã lưu." },
+  ru: { title: "Калькулятор валют", subtitle: "Калькулятор обмена валют для путешествий", features: "Функции", f1t: "Мгновенный запуск", f1d: "Без экранов загрузки.", f2t: "19+ валют", f2d: "Основные мировые валюты.", f3t: "График 90 дней", f3d: "Просмотр тенденций курсов.", f4t: "Ручной курс", f4d: "Введите свой курс.", f5t: "8 языков", f5d: "Поддержка 8 языков.", f6t: "Офлайн", f6d: "Работает без интернета." }
+};
+function setLang(l) {
+  const t = translations[l] || translations.en;
+  document.getElementById('t-title').textContent = t.title;
+  document.getElementById('t-subtitle').textContent = t.subtitle;
+  document.getElementById('t-features').textContent = t.features;
+  document.getElementById('t-f1-title').textContent = t.f1t;
+  document.getElementById('t-f1-desc').textContent = t.f1d;
+  document.getElementById('t-f2-title').textContent = t.f2t;
+  document.getElementById('t-f2-desc').textContent = t.f2d;
+  document.getElementById('t-f3-title').textContent = t.f3t;
+  document.getElementById('t-f3-desc').textContent = t.f3d;
+  document.getElementById('t-f4-title').textContent = t.f4t;
+  document.getElementById('t-f4-desc').textContent = t.f4d;
+  document.getElementById('t-f5-title').textContent = t.f5t;
+  document.getElementById('t-f5-desc').textContent = t.f5d;
+  document.getElementById('t-f6-title').textContent = t.f6t;
+  document.getElementById('t-f6-desc').textContent = t.f6d;
+}
+window.onload = function() {
+  const l = navigator.language.substring(0,2);
+  if (translations[l]) setLang(l);
+}
+</script>
+</body>
+</html>
