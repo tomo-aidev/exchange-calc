@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">환율 계산기</string>
-    <string name="app_title">환율 계산기</string>
+    <string name="app_name">환전 계산기</string>
+    <string name="app_title">환전 계산기-여행용</string>
     <string name="from_currency">변환 전</string>
     <string name="to_currency">변환 후</string>
     <string name="save">저장</string>
@@ -32,4 +32,15 @@
     <string name="paywall_feature_fast">빠르고 쉬운 환율 계산</string>
     <string name="paywall_one_time">일회 구매, 영구 사용</string>
     <string name="paywall_purchase">구매하기</string>
+    <string name="manual_rate">수동 환율</string>
+    <string name="language">언어</string>
+    <string name="system_default">시스템 기본값</string>
+    <string name="rate_chart">환율 차트</string>
+    <string name="loading_chart">차트 로딩 중\u2026</string>
+    <string name="no_chart_data">차트 데이터 없음</string>
+    <string name="days_90">90일</string>
+    <string name="current">현재</string>
+    <string name="high">고가</string>
+    <string name="low">저가</string>
+    <string name="change">변동</string>
 </resources>

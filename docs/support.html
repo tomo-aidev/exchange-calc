@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support - TripRate</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; }
+h1 { color: #005BB2; }
+h2 { color: #005BB2; margin-top: 32px; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; }
+h3 { color: #444; margin-top: 20px; }
+.lang-selector { text-align: right; margin-bottom: 20px; }
+.lang-selector a { margin: 0 5px; text-decoration: none; color: #005BB2; cursor: pointer; }
+.lang-selector a.active { font-weight: bold; text-decoration: underline; }
+.section { display: none; }
+.section.active { display: block; }
+.faq-item { margin-bottom: 16px; }
+.faq-item p { margin: 4px 0; }
+.contact-box { background: #f0f4fa; border-left: 4px solid #005BB2; padding: 16px; border-radius: 4px; margin-top: 16px; }
+.contact-box a { color: #005BB2; }
+.back-link { margin-top: 32px; text-align: center; }
+.back-link a { color: #005BB2; }
+</style>
+<script>
+function showLang(lang) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('support-' + lang).classList.add('active');
+  document.querySelectorAll('.lang-selector a').forEach(a => a.classList.remove('active'));
+  const el = document.querySelector('.lang-selector a[data-lang="' + lang + '"]');
+  if (el) el.classList.add('active');
+}
+window.onload = function() {
+  const lang = navigator.language.substring(0,2);
+  const supported = ['en','ja','ko','zh','th','vi','ru'];
+  showLang(supported.includes(lang) ? lang : 'en');
+}
+</script>
+</head>
+<body>
+<div class="lang-selector">
+<a data-lang="en" href="#" onclick="showLang('en')">EN</a>|
+<a data-lang="ja" href="#" onclick="showLang('ja')">JA</a>|
+<a data-lang="ko" href="#" onclick="showLang('ko')">KO</a>|
+<a data-lang="zh" href="#" onclick="showLang('zh')">ZH</a>|
+<a data-lang="th" href="#" onclick="showLang('th')">TH</a>|
+<a data-lang="vi" href="#" onclick="showLang('vi')">VI</a>|
+<a data-lang="ru" href="#" onclick="showLang('ru')">RU</a>
+</div>
+
+<!-- English -->
+<div id="support-en" class="section active">
+<h1>Support & FAQ</h1>
+<p>Find answers to common questions about TripRate below.</p>
+
+<h2>How to Use</h2>
+<div class="faq-item">
+<h3>How do I convert currencies?</h3>
+<p>Select your source and target currencies using the currency selectors at the top of the screen. Then enter the amount using the numeric keypad. The converted result is displayed instantly.</p>
+</div>
+<div class="faq-item">
+<h3>How do I swap currencies?</h3>
+<p>Tap the swap button between the two currency selectors to quickly reverse the conversion direction.</p>
+</div>
+
+<h2>Rate Updates</h2>
+<div class="faq-item">
+<h3>How often are exchange rates updated?</h3>
+<p>Exchange rates are updated automatically when you open the app and have an internet connection. Rates are sourced from ExchangeRate-API and refreshed periodically throughout the day.</p>
+</div>
+<div class="faq-item">
+<h3>How accurate are the rates?</h3>
+<p>The rates are mid-market reference rates for informational purposes. Actual rates at banks or exchange offices may differ. Always verify with your financial institution before making transactions.</p>
+</div>
+
+<h2>Offline Usage</h2>
+<div class="faq-item">
+<h3>Can I use the app without internet?</h3>
+<p>Yes. TripRate caches the most recent exchange rates on your device. When offline, the app uses these cached rates. The date of the cached rates is displayed so you know how current they are.</p>
+</div>
+
+<h2>Manual Rate</h2>
+<div class="faq-item">
+<h3>How do I enter a custom exchange rate?</h3>
+<p>Tap the exchange rate display area to switch to manual rate mode. You can then enter any custom rate for your calculation. This is useful when you want to use the exact rate offered at a specific exchange counter.</p>
+</div>
+
+<h2>Contact Us</h2>
+<div class="contact-box">
+<p>If you have questions, feedback, or need further assistance, please contact us:</p>
+<p><strong>Email:</strong> <a href="mailto:getonnews@gmail.com">getonnews@gmail.com</a></p>
+</div>
+
+<div class="back-link"><a href="index.html">&larr; Back to Home</a></div>
+</div>
+
+<!-- Japanese -->
+<div id="support-ja" class="section">
+<h1>サポート & よくある質問</h1>
+<p>TripRateに関するよくある質問と回答をご覧ください。</p>
+
+<h2>使い方</h2>
+<div class="faq-item">
+<h3>通貨の換算方法は？</h3>
+<p>画面上部の通貨セレクターで、変換元と変換先の通貨を選択します。次に、数字キーパッドで金額を入力すると、変換結果が即座に表示されます。</p>
+</div>
+<div class="faq-item">
+<h3>通貨を入れ替えるには？</h3>
+<p>2つの通貨セレクターの間にあるスワップボタンをタップすると、変換方向を素早く切り替えることができます。</p>
+</div>
+
+<h2>レート更新</h2>
+<div class="faq-item">
+<h3>為替レートはどのくらいの頻度で更新されますか？</h3>
+<p>インターネット接続がある状態でアプリを開くと、為替レートが自動的に更新されます。レートはExchangeRate-APIから取得され、1日を通して定期的に更新されます。</p>
+</div>
+<div class="faq-item">
+<h3>レートはどのくらい正確ですか？</h3>
+<p>表示されるレートは参考用の中間市場レートです。銀行や両替所の実際のレートとは異なる場合があります。取引前に金融機関でご確認ください。</p>
+</div>
+
+<h2>オフライン利用</h2>
+<div class="faq-item">
+<h3>インターネットなしで使えますか？</h3>
+<p>はい。TripRateは最新の為替レートをデバイスにキャッシュします。オフライン時はキャッシュされたレートを使用します。キャッシュされたレートの日付が表示されるので、データの鮮度を確認できます。</p>
+</div>
+
+<h2>手動レート</h2>
+<div class="faq-item">
+<h3>カスタム為替レートを入力するには？</h3>
+<p>為替レート表示エリアをタップすると、手動レートモードに切り替わります。任意のレートを入力して計算できます。特定の両替所で提示されたレートを使いたい場合に便利です。</p>
+</div>
+
+<h2>お問い合わせ</h2>
+<div class="contact-box">
+<p>ご質問、フィードバック、その他のサポートが必要な場合は、以下にご連絡ください：</p>
+<p><strong>メール:</strong> <a href="mailto:getonnews@gmail.com">getonnews@gmail.com</a></p>
+</div>
+
+<div class="back-link"><a href="index.html">&larr; ホームに戻る</a></div>
+</div>
+
+<!-- Korean -->
+<div id="support-ko" class="section">
+<h1>지원 및 자주 묻는 질문</h1>
+<p>TripRate에 대해 자주 묻는 질문과 답변을 확인하세요.</p>
+
+<h2>사용 방법</h2>
+<div class="faq-item">
+<h3>통화를 환산하려면 어떻게 하나요?</h3>
+<p>화면 상단의 통화 선택기에서 원본 통화와 대상 통화를 선택합니다. 그런 다음 숫자 키패드로 금액을 입력하면 환산 결과가 즉시 표시됩니다.</p>
+</div>
+<div class="faq-item">
+<h3>통화를 바꾸려면?</h3>
+<p>두 통화 선택기 사이의 스왑 버튼을 탭하면 환산 방향을 빠르게 전환할 수 있습니다.</p>
+</div>
+
+<h2>환율 업데이트</h2>
+<div class="faq-item">
+<h3>환율은 얼마나 자주 업데이트되나요?</h3>
+<p>인터넷에 연결된 상태에서 앱을 열면 환율이 자동으로 업데이트됩니다. 환율은 ExchangeRate-API에서 가져오며 하루 동안 주기적으로 갱신됩니다.</p>
+</div>
+<div class="faq-item">
+<h3>환율은 얼마나 정확한가요?</h3>
+<p>표시되는 환율은 참고용 중간 시장 환율입니다. 은행이나 환전소의 실제 환율과 다를 수 있습니다. 거래 전에 금융 기관에서 확인하시기 바랍니다.</p>
+</div>
+
+<h2>오프라인 사용</h2>
+<div class="faq-item">
+<h3>인터넷 없이 사용할 수 있나요?</h3>
+<p>네. TripRate는 최신 환율을 기기에 캐시합니다. 오프라인 시 캐시된 환율을 사용합니다. 캐시된 환율의 날짜가 표시되어 데이터의 최신 여부를 확인할 수 있습니다.</p>
+</div>
+
+<h2>수동 환율</h2>
+<div class="faq-item">
+<h3>사용자 지정 환율을 입력하려면?</h3>
+<p>환율 표시 영역을 탭하면 수동 환율 모드로 전환됩니다. 원하는 환율을 직접 입력하여 계산할 수 있습니다. 특정 환전소에서 제시한 환율을 사용할 때 유용합니다.</p>
+</div>
+
+<h2>문의하기</h2>
+<div class="contact-box">
+<p>질문, 피드백 또는 추가 지원이 필요하시면 아래로 연락해 주세요:</p>
+<p><strong>이메일:</strong> <a href="mailto:getonnews@gmail.com">getonnews@gmail.com</a></p>
+</div>
+
+<div class="back-link"><a href="index.html">&larr; 홈으로 돌아가기</a></div>
+</div>
+
+<!-- Chinese -->
+<div id="support-zh" class="section">
+<h1>支持与常见问题</h1>
+<p>查看以下关于TripRate的常见问题与解答。</p>
+
+<h2>使用方法</h2>
+<div class="faq-item">
+<h3>如何进行货币换算？</h3>
+<p>在屏幕顶部的货币选择器中选择源货币和目标货币，然后使用数字键盘输入金额，换算结果会即时显示。</p>
+</div>
+<div class="faq-item">
+<h3>如何切换货币？</h3>
+<p>点击两个货币选择器之间的切换按钮，可以快速反转换算方向。</p>
+</div>
+
+<h2>汇率更新</h2>
+<div class="faq-item">
+<h3>汇率多久更新一次？</h3>
+<p>在有网络连接的情况下打开应用时，汇率会自动更新。汇率数据来源于ExchangeRate-API，全天定期刷新。</p>
+</div>
+<div class="faq-item">
+<h3>汇率有多准确？</h3>
+<p>显示的汇率为中间市场参考汇率，仅供参考。银行或兑换处的实际汇率可能不同。交易前请向您的金融机构确认。</p>
+</div>
+
+<h2>离线使用</h2>
+<div class="faq-item">
+<h3>没有网络可以使用吗？</h3>
+<p>可以。TripRate会在设备上缓存最新的汇率。离线时使用缓存的汇率。缓存汇率的日期会显示出来，方便您了解数据的时效性。</p>
+</div>
+
+<h2>手动汇率</h2>
+<div class="faq-item">
+<h3>如何输入自定义汇率？</h3>
+<p>点击汇率显示区域即可切换到手动汇率模式。您可以输入任意汇率进行计算。当您想使用特定兑换柜台提供的汇率时，这个功能非常实用。</p>
+</div>
+
+<h2>联系我们</h2>
+<div class="contact-box">
+<p>如有问题、反馈或需要进一步帮助，请通过以下方式联系我们：</p>
+<p><strong>邮箱：</strong> <a href="mailto:getonnews@gmail.com">getonnews@gmail.com</a></p>
+</div>
+
+<div class="back-link"><a href="index.html">&larr; 返回首页</a></div>
+</div>
+
+<!-- Thai -->
+<div id="support-th" class="section">
+<h1>ฝ่ายสนับสนุนและคำถามที่พบบ่อย</h1>
+<p>ค้นหาคำตอบสำหรับคำถามที่พบบ่อยเกี่ยวกับ TripRate ด้านล่าง</p>
+
+<h2>วิธีใช้งาน</h2>
+<div class="faq-item">
+<h3>แปลงสกุลเงินอย่างไร?</h3>
+<p>เลือกสกุลเงินต้นทางและปลายทางจากตัวเลือกสกุลเงินที่ด้านบนของหน้าจอ จากนั้นป้อนจำนวนเงินด้วยแป้นตัวเลข ผลลัพธ์จะแสดงทันที</p>
+</div>
+<div class="faq-item">
+<h3>สลับสกุลเงินอย่างไร?</h3>
+<p>แตะปุ่มสลับระหว่างตัวเลือกสกุลเงินทั้งสองเพื่อสลับทิศทางการแปลงอย่างรวดเร็ว</p>
+</div>
+
+<h2>การอัปเดตอัตราแลกเปลี่ยน</h2>
+<div class="faq-item">
+<h3>อัตราแลกเปลี่ยนอัปเดตบ่อยแค่ไหน?</h3>
+<p>อัตราแลกเปลี่ยนจะอัปเดตโดยอัตโนมัติเมื่อคุณเปิดแอปและมีการเชื่อมต่ออินเทอร์เน็ต อัตราแลกเปลี่ยนมาจาก ExchangeRate-API และรีเฟรชเป็นระยะตลอดทั้งวัน</p>
+</div>
+<div class="faq-item">
+<h3>อัตราแลกเปลี่ยนแม่นยำแค่ไหน?</h3>
+<p>อัตราที่แสดงเป็นอัตราอ้างอิงตลาดกลางเพื่อการอ้างอิงเท่านั้น อัตราจริงที่ธนาคารหรือร้านแลกเงินอาจแตกต่างกัน กรุณาตรวจสอบกับสถาบันการเงินก่อนทำธุรกรรม</p>
+</div>
+
+<h2>การใช้งานแบบออฟไลน์</h2>
+<div class="faq-item">
+<h3>สามารถใช้แอปโดยไม่มีอินเทอร์เน็ตได้ไหม?</h3>
+<p>ได้ TripRate จะแคชอัตราแลกเปลี่ยนล่าสุดไว้ในอุปกรณ์ของคุณ เมื่อออฟไลน์ แอปจะใช้อัตราที่แคชไว้ วันที่ของอัตราที่แคชจะแสดงเพื่อให้คุณทราบว่าข้อมูลเป็นปัจจุบันแค่ไหน</p>
+</div>
+
+<h2>อัตราด้วยตนเอง</h2>
+<div class="faq-item">
+<h3>ป้อนอัตราแลกเปลี่ยนเองได้อย่างไร?</h3>
+<p>แตะบริเวณที่แสดงอัตราแลกเปลี่ยนเพื่อสลับไปยังโหมดอัตราด้วยตนเอง จากนั้นคุณสามารถป้อนอัตราใดก็ได้สำหรับการคำนวณ สิ่งนี้มีประโยชน์เมื่อคุณต้องการใช้อัตราที่เสนอจากเคาน์เตอร์แลกเงินเฉพาะ</p>
+</div>
+
+<h2>ติดต่อเรา</h2>
+<div class="contact-box">
+<p>หากมีคำถาม ข้อเสนอแนะ หรือต้องการความช่วยเหลือเพิ่มเติม กรุณาติดต่อเรา:</p>
+<p><strong>อีเมล:</strong> <a href="mailto:getonnews@gmail.com">getonnews@gmail.com</a></p>
+</div>
+
+<div class="back-link"><a href="index.html">&larr; กลับหน้าหลัก</a></div>
+</div>
+
+<!-- Vietnamese -->
+<div id="support-vi" class="section">
+<h1>Hỗ trợ & Câu hỏi thường gặp</h1>
+<p>Tìm câu trả lời cho các câu hỏi thường gặp về TripRate bên dưới.</p>
+
+<h2>Cách sử dụng</h2>
+<div class="faq-item">
+<h3>Làm thế nào để chuyển đổi tiền tệ?</h3>
+<p>Chọn loại tiền nguồn và tiền đích bằng bộ chọn tiền tệ ở đầu màn hình. Sau đó nhập số tiền bằng bàn phím số. Kết quả chuyển đổi sẽ hiển thị ngay lập tức.</p>
+</div>
+<div class="faq-item">
+<h3>Làm thế nào để đảo ngược tiền tệ?</h3>
+<p>Nhấn nút hoán đổi giữa hai bộ chọn tiền tệ để nhanh chóng đảo ngược hướng chuyển đổi.</p>
+</div>
+
+<h2>Cập nhật tỷ giá</h2>
+<div class="faq-item">
+<h3>Tỷ giá được cập nhật bao lâu một lần?</h3>
+<p>Tỷ giá được cập nhật tự động khi bạn mở ứng dụng và có kết nối internet. Tỷ giá được lấy từ ExchangeRate-API và làm mới định kỳ trong ngày.</p>
+</div>
+<div class="faq-item">
+<h3>Tỷ giá có chính xác không?</h3>
+<p>Tỷ giá hiển thị là tỷ giá tham chiếu thị trường trung bình, chỉ mang tính tham khảo. Tỷ giá thực tế tại ngân hàng hoặc quầy đổi tiền có thể khác. Vui lòng xác nhận với tổ chức tài chính trước khi giao dịch.</p>
+</div>
+
+<h2>Sử dụng ngoại tuyến</h2>
+<div class="faq-item">
+<h3>Có thể dùng ứng dụng khi không có internet không?</h3>
+<p>Có. TripRate lưu trữ tỷ giá mới nhất trên thiết bị của bạn. Khi ngoại tuyến, ứng dụng sử dụng tỷ giá đã lưu. Ngày của tỷ giá đã lưu sẽ được hiển thị để bạn biết dữ liệu mới đến mức nào.</p>
+</div>
+
+<h2>Tỷ giá thủ công</h2>
+<div class="faq-item">
+<h3>Làm thế nào để nhập tỷ giá tùy chỉnh?</h3>
+<p>Nhấn vào khu vực hiển thị tỷ giá để chuyển sang chế độ tỷ giá thủ công. Sau đó bạn có thể nhập bất kỳ tỷ giá nào để tính toán. Tính năng này hữu ích khi bạn muốn sử dụng tỷ giá chính xác từ một quầy đổi tiền cụ thể.</p>
+</div>
+
+<h2>Liên hệ</h2>
+<div class="contact-box">
+<p>Nếu bạn có câu hỏi, phản hồi hoặc cần hỗ trợ thêm, vui lòng liên hệ:</p>
+<p><strong>Email:</strong> <a href="mailto:getonnews@gmail.com">getonnews@gmail.com</a></p>
+</div>
+
+<div class="back-link"><a href="index.html">&larr; Quay lại trang chủ</a></div>
+</div>
+
+<!-- Russian -->
+<div id="support-ru" class="section">
+<h1>Поддержка и часто задаваемые вопросы</h1>
+<p>Ниже приведены ответы на часто задаваемые вопросы о TripRate.</p>
+
+<h2>Как пользоваться</h2>
+<div class="faq-item">
+<h3>Как конвертировать валюту?</h3>
+<p>Выберите исходную и целевую валюту с помощью селекторов валют в верхней части экрана. Затем введите сумму с помощью цифровой клавиатуры. Результат конвертации отображается мгновенно.</p>
+</div>
+<div class="faq-item">
+<h3>Как поменять валюты местами?</h3>
+<p>Нажмите кнопку обмена между двумя селекторами валют, чтобы быстро изменить направление конвертации.</p>
+</div>
+
+<h2>Обновление курсов</h2>
+<div class="faq-item">
+<h3>Как часто обновляются курсы валют?</h3>
+<p>Курсы валют обновляются автоматически при открытии приложения при наличии подключения к интернету. Курсы получены из ExchangeRate-API и обновляются периодически в течение дня.</p>
+</div>
+<div class="faq-item">
+<h3>Насколько точны курсы?</h3>
+<p>Отображаемые курсы являются справочными среднерыночными курсами. Фактические курсы в банках или обменных пунктах могут отличаться. Перед совершением операций уточняйте курс в вашем финансовом учреждении.</p>
+</div>
+
+<h2>Офлайн-использование</h2>
+<div class="faq-item">
+<h3>Можно ли пользоваться приложением без интернета?</h3>
+<p>Да. TripRate сохраняет последние курсы валют на вашем устройстве. В офлайн-режиме приложение использует сохраненные курсы. Дата сохраненных курсов отображается, чтобы вы знали, насколько актуальны данные.</p>
+</div>
+
+<h2>Ручной курс</h2>
+<div class="faq-item">
+<h3>Как ввести свой курс?</h3>
+<p>Нажмите на область отображения курса, чтобы переключиться в режим ручного ввода. Затем вы можете ввести любой курс для расчета. Это удобно, когда вы хотите использовать точный курс, предложенный в конкретном обменном пункте.</p>
+</div>
+
+<h2>Связаться с нами</h2>
+<div class="contact-box">
+<p>Если у вас есть вопросы, отзывы или вам нужна дополнительная помощь, свяжитесь с нами:</p>
+<p><strong>Эл. почта:</strong> <a href="mailto:getonnews@gmail.com">getonnews@gmail.com</a></p>
+</div>
+
+<div class="back-link"><a href="index.html">&larr; Вернуться на главную</a></div>
+</div>
+
+</body>
+</html>

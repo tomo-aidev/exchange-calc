@@ -9,14 +9,15 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.exchangecalc.app.service.ExchangeRateService
 import com.exchangecalc.app.ui.calculator.CalculatorScreen
+import com.exchangecalc.app.ui.chart.RateChartScreen
 import com.exchangecalc.app.ui.history.HistoryScreen
 import com.exchangecalc.app.ui.paywall.PaywallSheet
 import com.exchangecalc.app.ui.settings.SettingsScreen
-import com.exchangecalc.app.ui.splash.SplashScreen
 import com.exchangecalc.app.ui.theme.ExchangeCalcTheme
 import com.exchangecalc.app.util.AppSettings
 import com.exchangecalc.app.util.PurchaseManager
 import com.exchangecalc.app.viewmodel.CalculatorViewModel
+import com.google.android.gms.ads.MobileAds
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,16 +25,11 @@ class MainActivity : ComponentActivity() {
         AppSettings.init(this)
         PurchaseManager.init(this)
         ExchangeRateService.getInstance(this)
+        MobileAds.initialize(this)
         enableEdgeToEdge()
         setContent {
             ExchangeCalcTheme {
-                var showSplash by remember { mutableStateOf(true) }
-
-                if (showSplash) {
-                    SplashScreen(onFinished = { showSplash = false })
-                } else {
-                    MainApp()
-                }
+                MainApp()
             }
         }
     }
@@ -51,7 +47,8 @@ fun MainApp(
             CalculatorScreen(
                 viewModel = viewModel,
                 onShowHistory = { currentScreen = "history" },
-                onShowSettings = { currentScreen = "settings" }
+                onShowSettings = { currentScreen = "settings" },
+                onShowChart = { currentScreen = "chart" }
             )
 
             if (viewModel.showPaywall) {
@@ -75,6 +72,13 @@ fun MainApp(
         }
         "settings" -> {
             SettingsScreen(onBack = { currentScreen = "calculator" })
+        }
+        "chart" -> {
+            RateChartScreen(
+                fromCurrency = viewModel.fromCurrency,
+                toCurrency = viewModel.toCurrency,
+                onBack = { currentScreen = "calculator" }
+            )
         }
     }
 }

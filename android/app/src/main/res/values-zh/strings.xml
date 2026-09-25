@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">汇率计算器</string>
-    <string name="app_title">汇率计算器</string>
+    <string name="app_title">货币兑换计算器-旅行</string>
     <string name="from_currency">从</string>
     <string name="to_currency">到</string>
     <string name="save">保存</string>
@@ -32,4 +32,15 @@
     <string name="paywall_feature_fast">快速简便的货币兑换</string>
     <string name="paywall_one_time">一次购买，永久使用</string>
     <string name="paywall_purchase">购买</string>
+    <string name="manual_rate">手动汇率</string>
+    <string name="language">语言</string>
+    <string name="system_default">系统默认</string>
+    <string name="rate_chart">汇率图表</string>
+    <string name="loading_chart">加载图表中\u2026</string>
+    <string name="no_chart_data">暂无图表数据</string>
+    <string name="days_90">90天</string>
+    <string name="current">当前</string>
+    <string name="high">最高</string>
+    <string name="low">最低</string>
+    <string name="change">变动</string>
 </resources>

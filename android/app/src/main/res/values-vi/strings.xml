@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Máy tính tỷ giá</string>
-    <string name="app_title">Máy tính tỷ giá</string>
+    <string name="app_name">Đổi tiền</string>
+    <string name="app_title">Máy tính đổi tiền du lịch</string>
     <string name="from_currency">Từ</string>
     <string name="to_currency">Đến</string>
     <string name="save">Lưu</string>
@@ -32,4 +32,15 @@
     <string name="paywall_feature_fast">Đổi tiền nhanh chóng và dễ dàng</string>
     <string name="paywall_one_time">Mua một lần, dùng mãi mãi</string>
     <string name="paywall_purchase">Mua</string>
+    <string name="manual_rate">Tỷ giá thủ công</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="system_default">Mặc định hệ thống</string>
+    <string name="rate_chart">Biểu đồ tỷ giá</string>
+    <string name="loading_chart">Đang tải biểu đồ\u2026</string>
+    <string name="no_chart_data">Không có dữ liệu biểu đồ</string>
+    <string name="days_90">90 ngày</string>
+    <string name="current">Hiện tại</string>
+    <string name="high">Cao nhất</string>
+    <string name="low">Thấp nhất</string>
+    <string name="change">Thay đổi</string>
 </resources>

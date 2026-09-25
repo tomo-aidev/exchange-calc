@@ -48,7 +48,7 @@ struct NumericKeypad: View {
                     VStack(spacing: 2) {
                         Image(systemName: "tray.and.arrow.down")
                             .font(.body.weight(.medium))
-                        Text(LocaleManager.shared.localized("save"))
+                        Text(String(localized: "save"))
                             .font(.caption.weight(.bold))
                     }
                 }

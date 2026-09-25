@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">両替計算</string>
-    <string name="app_title">両替計算</string>
+    <string name="app_title">通貨両替電卓-旅行用</string>
     <string name="from_currency">変換元</string>
     <string name="to_currency">変換先</string>
     <string name="save">保存</string>
@@ -32,4 +32,15 @@
     <string name="paywall_feature_fast">素早く簡単な両替計算</string>
     <string name="paywall_one_time">買い切り・ずっと使える</string>
     <string name="paywall_purchase">購入する</string>
+    <string name="manual_rate">手動レート</string>
+    <string name="language">言語</string>
+    <string name="system_default">システムのデフォルト</string>
+    <string name="rate_chart">レートチャート</string>
+    <string name="loading_chart">チャート読み込み中\u2026</string>
+    <string name="no_chart_data">チャートデータなし</string>
+    <string name="days_90">90日間</string>
+    <string name="current">現在</string>
+    <string name="high">高値</string>
+    <string name="low">安値</string>
+    <string name="change">変動</string>
 </resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TripRate</string>
+    <string name="app_title">Калькулятор валют</string>
+    <string name="from_currency">Из</string>
+    <string name="to_currency">В</string>
+    <string name="save">Сохранить</string>
+    <string name="saved">Сохранено!</string>
+    <string name="history">История</string>
+    <string name="settings">Настройки</string>
+    <string name="refresh_rates">Обновить курсы</string>
+    <string name="loading_rates">Загрузка курсов…</string>
+    <string name="no_rates">Нет данных о курсах</string>
+    <string name="no_history">Нет истории</string>
+    <string name="no_history_description">Сохраненные конвертации будут отображаться здесь</string>
+    <string name="back">Назад</string>
+    <string name="close">Закрыть</string>
+    <string name="delete_all">Удалить все</string>
+    <string name="default_currencies">Валюты по умолчанию</string>
+    <string name="appearance">Оформление</string>
+    <string name="dark_mode">Тёмный режим</string>
+    <string name="purchase">Купить</string>
+    <string name="pro_unlocked">Pro разблокирован</string>
+    <string name="restore_purchase">Восстановить покупку</string>
+    <string name="restore_success">Покупка восстановлена!</string>
+    <string name="restore_failed">Покупки не найдены</string>
+    <string name="about">О приложении</string>
+    <string name="rate_app">Оценить приложение</string>
+    <string name="version">Версия</string>
+    <string name="paywall_title">Обновить до Pro</string>
+    <string name="paywall_feature_unlimited">Неограниченные конвертации</string>
+    <string name="paywall_feature_fast">Быстрый и удобный обмен валют</string>
+    <string name="paywall_one_time">Одна покупка навсегда</string>
+    <string name="paywall_purchase">Купить</string>
+    <string name="manual_rate">Ручной курс</string>
+    <string name="language">Язык</string>
+    <string name="system_default">По умолчанию</string>
+    <string name="rate_chart">График курсов</string>
+    <string name="loading_chart">Загрузка графика…</string>
+    <string name="no_chart_data">Нет данных для графика</string>
+    <string name="days_90">90 дней</string>
+    <string name="current">Текущий</string>
+    <string name="high">Макс</string>
+    <string name="low">Мин</string>
+    <string name="change">Изменение</string>
+</resources>

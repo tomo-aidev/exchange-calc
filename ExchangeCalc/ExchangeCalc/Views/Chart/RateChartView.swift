@@ -17,11 +17,11 @@ struct RateChartView: View {
 
                 if isLoading {
                     Spacer()
-                    ProgressView(LocaleManager.shared.localized("loading_chart"))
+                    ProgressView(String(localized: "loading_chart"))
                     Spacer()
                 } else if dataPoints.isEmpty {
                     Spacer()
-                    Text(LocaleManager.shared.localized("no_chart_data"))
+                    Text(String(localized: "no_chart_data"))
                         .foregroundStyle(.secondary)
                     Spacer()
                 } else {
@@ -42,11 +42,11 @@ struct RateChartView: View {
                     Spacer()
                 }
             }
-            .navigationTitle(LocaleManager.shared.localized("rate_chart"))
+            .navigationTitle(String(localized: "rate_chart"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button(LocaleManager.shared.localized("back")) { onBack() }
+                    Button(String(localized: "back")) { onBack() }
                 }
             }
         }
@@ -65,7 +65,7 @@ struct RateChartView: View {
             Text(toCurrency.flag).font(.title2)
             Text(toCurrency.rawValue).font(.headline)
             Spacer()
-            Text(LocaleManager.shared.localized("days_90"))
+            Text(String(localized: "days_90"))
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 8)
@@ -88,11 +88,11 @@ struct RateChartView: View {
         let change = first > 0 ? ((current - first) / first) * 100 : 0
 
         return HStack(spacing: 16) {
-            summaryItem(label: LocaleManager.shared.localized("current"), value: String(format: "%.3f", current))
-            summaryItem(label: LocaleManager.shared.localized("high"), value: String(format: "%.3f", max))
-            summaryItem(label: LocaleManager.shared.localized("low"), value: String(format: "%.3f", min))
+            summaryItem(label: String(localized: "current"), value: String(format: "%.3f", current))
+            summaryItem(label: String(localized: "high"), value: String(format: "%.3f", max))
+            summaryItem(label: String(localized: "low"), value: String(format: "%.3f", min))
             summaryItem(
-                label: LocaleManager.shared.localized("change"),
+                label: String(localized: "change"),
                 value: String(format: "%+.1f%%", change),
                 color: change >= 0 ? .green : .red
             )

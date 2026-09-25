@@ -73,7 +73,7 @@ final class CalculatorViewModel: Sendable {
 
     var lastUpdatedDisplay: String? {
         if manualRateEnabled, manualRate != nil {
-            return LocaleManager.shared.localized("manual_rate")
+            return String(localized: "manual_rate")
         }
         guard let date = exchangeRateService.lastUpdated else { return nil }
         let formatter = DateFormatter()

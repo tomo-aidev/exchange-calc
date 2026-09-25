@@ -4,7 +4,6 @@ import SwiftData
 struct CalculatorView: View {
     @Bindable var viewModel: CalculatorViewModel
     @Environment(\.modelContext) private var modelContext
-    @State private var locale = LocaleManager.shared
     let onShowHistory: () -> Void
     let onShowSettings: () -> Void
     let onShowChart: () -> Void
@@ -37,10 +36,11 @@ struct CalculatorView: View {
 
                 Spacer(minLength: 4)
 
-                AdBannerView()
-                    .frame(height: 50)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 4)
+                // AdBannerView - hidden during screenshot capture
+                // AdBannerView()
+                //     .frame(height: 50)
+                //     .padding(.horizontal, 16)
+                //     .padding(.bottom, 4)
 
                 NumericKeypad(
                     onDigit: viewModel.appendDigit,
@@ -62,14 +62,14 @@ struct CalculatorView: View {
         }
         .sheet(isPresented: $viewModel.showFromCurrencyPicker) {
             CurrencySelector(
-                title: locale.localized("from_currency"),
+                title: String(localized: "from_currency"),
                 excludeCurrency: viewModel.toCurrency,
                 onSelect: viewModel.selectFromCurrency
             )
         }
         .sheet(isPresented: $viewModel.showToCurrencyPicker) {
             CurrencySelector(
-                title: locale.localized("to_currency"),
+                title: String(localized: "to_currency"),
                 excludeCurrency: viewModel.fromCurrency,
                 onSelect: viewModel.selectToCurrency
             )
@@ -78,21 +78,21 @@ struct CalculatorView: View {
 
     private var headerSection: some View {
         HStack {
-            Text(locale.localized("app_title"))
+            Text(String(localized: "app_title"))
                 .font(.headline)
             Spacer()
             Menu {
                 Button { onShowChart() } label: {
-                    Label(locale.localized("rate_chart"), systemImage: "chart.line.uptrend.xyaxis")
+                    Label(String(localized: "rate_chart"), systemImage: "chart.line.uptrend.xyaxis")
                 }
                 Button { onShowHistory() } label: {
-                    Label(locale.localized("history"), systemImage: "clock.arrow.circlepath")
+                    Label(String(localized: "history"), systemImage: "clock.arrow.circlepath")
                 }
                 Button { onShowSettings() } label: {
-                    Label(locale.localized("settings"), systemImage: "gearshape")
+                    Label(String(localized: "settings"), systemImage: "gearshape")
                 }
                 Button { Task { await viewModel.forceRefreshRates() } } label: {
-                    Label(locale.localized("refresh_rates"), systemImage: "arrow.clockwise")
+                    Label(String(localized: "refresh_rates"), systemImage: "arrow.clockwise")
                 }
             } label: {
                 Image(systemName: "ellipsis.circle")
@@ -156,7 +156,7 @@ struct CalculatorView: View {
     private var savedFeedbackToast: some View {
         VStack {
             Spacer()
-            Text(locale.localized("saved"))
+            Text(String(localized: "saved"))
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.white)
                 .padding(.horizontal, 24)

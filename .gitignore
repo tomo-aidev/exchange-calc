@@ -16,6 +16,7 @@ android/build/
 android/app/build/
 android/local.properties
 android/keystore/
+android/key.properties
 
 # Node
 workers/node_modules/
@@ -23,6 +24,10 @@ workers/node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# Local dev caches
+.wrangler/
+android/.kotlin/
 
 # Secrets
 *.jks

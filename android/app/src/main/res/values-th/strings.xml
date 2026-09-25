@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">เครื่องคำนวณอัตราแลกเปลี่ยน</string>
-    <string name="app_title">เครื่องคำนวณอัตราแลกเปลี่ยน</string>
+    <string name="app_name">แลกเงิน</string>
+    <string name="app_title">เครื่องคำนวณแลกเงินสำหรับเดินทาง</string>
     <string name="from_currency">จาก</string>
     <string name="to_currency">เป็น</string>
     <string name="save">บันทึก</string>
@@ -32,4 +32,15 @@
     <string name="paywall_feature_fast">แลกเปลี่ยนเงินตราอย่างรวดเร็ว</string>
     <string name="paywall_one_time">ซื้อครั้งเดียว ใช้ตลอดไป</string>
     <string name="paywall_purchase">ซื้อ</string>
+    <string name="manual_rate">อัตราด้วยตนเอง</string>
+    <string name="language">ภาษา</string>
+    <string name="system_default">ค่าเริ่มต้นของระบบ</string>
+    <string name="rate_chart">กราฟอัตราแลกเปลี่ยน</string>
+    <string name="loading_chart">กำลังโหลดกราฟ\u2026</string>
+    <string name="no_chart_data">ไม่มีข้อมูลกราฟ</string>
+    <string name="days_90">90 วัน</string>
+    <string name="current">ปัจจุบัน</string>
+    <string name="high">สูงสุด</string>
+    <string name="low">ต่ำสุด</string>
+    <string name="change">เปลี่ยนแปลง</string>
 </resources>

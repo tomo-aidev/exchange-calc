@@ -2,7 +2,11 @@ package com.exchangecalc.app.ui.calculator
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -14,25 +18,29 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import com.exchangecalc.app.R
 import com.exchangecalc.app.ui.theme.Primary
 import com.exchangecalc.app.ui.theme.SwapAccent
 import com.exchangecalc.app.util.NumberFormatUtil
 import com.exchangecalc.app.viewmodel.CalculatorViewModel
-import java.text.SimpleDateFormat
-import java.util.*
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 
 @Composable
 fun CalculatorScreen(
     viewModel: CalculatorViewModel,
     onShowHistory: () -> Unit,
-    onShowSettings: () -> Unit
+    onShowSettings: () -> Unit,
+    onShowChart: () -> Unit = {}
 ) {
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
         val screenHeight = maxHeight
@@ -40,14 +48,14 @@ fun CalculatorScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .statusBarsPadding()
                 .padding(horizontal = 16.dp)
         ) {
             // Header
             HeaderSection(
-                remainingCount = viewModel.remainingCount,
-                isProUnlocked = viewModel.isProUnlocked,
                 onShowHistory = onShowHistory,
                 onShowSettings = onShowSettings,
+                onShowChart = onShowChart,
                 onRefreshRates = { viewModel.forceRefreshRates() }
             )
 
@@ -76,12 +84,21 @@ fun CalculatorScreen(
             DisplaySection(
                 result = viewModel.conversionResult,
                 rateDisplay = viewModel.rateDisplay,
-                lastUpdated = viewModel.lastUpdated,
+                lastUpdatedDisplay = viewModel.lastUpdatedDisplay,
                 isLoading = viewModel.isLoading,
-                hasRates = viewModel.hasRates
+                hasRates = viewModel.hasRates,
+                manualRateEnabled = viewModel.manualRateEnabled,
+                fromCurrency = viewModel.fromCurrency,
+                toCurrency = viewModel.toCurrency,
+                manualRateText = viewModel.manualRateText,
+                onToggleManualRate = { viewModel.toggleManualRate(it) },
+                onManualRateChanged = { viewModel.setManualRate(it) }
             )
 
             Spacer(modifier = Modifier.weight(1f))
+
+            // AdMob Banner
+            AdBannerView()
 
             // Keypad
             NumericKeypad(
@@ -131,10 +148,9 @@ fun CalculatorScreen(
 
 @Composable
 private fun HeaderSection(
-    remainingCount: Int,
-    isProUnlocked: Boolean,
     onShowHistory: () -> Unit,
     onShowSettings: () -> Unit,
+    onShowChart: () -> Unit,
     onRefreshRates: () -> Unit
 ) {
     var menuExpanded by remember { mutableStateOf(false) }
@@ -148,43 +164,47 @@ private fun HeaderSection(
         Text(
             text = stringResource(R.string.app_title),
             style = MaterialTheme.typography.titleMedium,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.testTag("app_title")
         )
 
         Spacer(modifier = Modifier.weight(1f))
 
-        if (!isProUnlocked) {
-            Text(
-                text = "$remainingCount",
-                fontSize = 12.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White,
-                modifier = Modifier
-                    .background(
-                        if (remainingCount > 3) Primary else Color.Red,
-                        shape = RoundedCornerShape(12.dp)
-                    )
-                    .padding(horizontal = 8.dp, vertical = 4.dp)
-            )
-            Spacer(modifier = Modifier.width(8.dp))
-        }
-
         Box {
             IconButton(onClick = { menuExpanded = true }) {
-                Icon(Icons.Default.MoreVert, contentDescription = null, tint = Primary)
+                Icon(Icons.Default.MoreVert, contentDescription = "Menu", tint = Primary)
             }
-            DropdownMenu(expanded = menuExpanded, onDismissRequest = { menuExpanded = false }) {
+            DropdownMenu(
+                expanded = menuExpanded,
+                onDismissRequest = { menuExpanded = false }
+            ) {
+                DropdownMenuItem(
+                    text = { Text(stringResource(R.string.rate_chart)) },
+                    onClick = {
+                        menuExpanded = false
+                        onShowChart()
+                    }
+                )
                 DropdownMenuItem(
                     text = { Text(stringResource(R.string.history)) },
-                    onClick = { menuExpanded = false; onShowHistory() }
+                    onClick = {
+                        menuExpanded = false
+                        onShowHistory()
+                    }
                 )
                 DropdownMenuItem(
                     text = { Text(stringResource(R.string.settings)) },
-                    onClick = { menuExpanded = false; onShowSettings() }
+                    onClick = {
+                        menuExpanded = false
+                        onShowSettings()
+                    }
                 )
                 DropdownMenuItem(
                     text = { Text(stringResource(R.string.refresh_rates)) },
-                    onClick = { menuExpanded = false; onRefreshRates() }
+                    onClick = {
+                        menuExpanded = false
+                        onRefreshRates()
+                    }
                 )
             }
         }
@@ -209,12 +229,13 @@ private fun CurrencyPairSelector(
                 .clip(RoundedCornerShape(12.dp))
                 .background(Primary.copy(alpha = 0.1f))
                 .clickable { onFromClick() }
-                .padding(horizontal = 12.dp, vertical = 10.dp),
+                .padding(horizontal = 12.dp, vertical = 10.dp)
+                .testTag("from_currency_selector"),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(6.dp)
         ) {
             Text(fromCurrency.flag, fontSize = 20.sp)
-            Text(fromCurrency.code, fontWeight = FontWeight.Bold)
+            Text(fromCurrency.code, fontWeight = FontWeight.Bold, modifier = Modifier.testTag("from_currency_code"))
             Icon(Icons.Default.ArrowDropDown, contentDescription = null, modifier = Modifier.size(16.dp))
         }
 
@@ -224,6 +245,7 @@ private fun CurrencyPairSelector(
             modifier = Modifier
                 .size(44.dp)
                 .background(SwapAccent, CircleShape)
+                .testTag("swap_button")
         ) {
             Icon(Icons.Default.SwapHoriz, contentDescription = "Swap", tint = Color.White)
         }
@@ -234,12 +256,13 @@ private fun CurrencyPairSelector(
                 .clip(RoundedCornerShape(12.dp))
                 .background(Primary.copy(alpha = 0.1f))
                 .clickable { onToClick() }
-                .padding(horizontal = 12.dp, vertical = 10.dp),
+                .padding(horizontal = 12.dp, vertical = 10.dp)
+                .testTag("to_currency_selector"),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(6.dp)
         ) {
             Text(toCurrency.flag, fontSize = 20.sp)
-            Text(toCurrency.code, fontWeight = FontWeight.Bold)
+            Text(toCurrency.code, fontWeight = FontWeight.Bold, modifier = Modifier.testTag("to_currency_code"))
             Icon(Icons.Default.ArrowDropDown, contentDescription = null, modifier = Modifier.size(16.dp))
         }
     }
@@ -249,20 +272,26 @@ private fun CurrencyPairSelector(
 private fun InputDisplay(displayText: String, currencySymbol: String) {
     Row(
         modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.Bottom
+        verticalAlignment = Alignment.Bottom,
+        horizontalArrangement = Arrangement.End
     ) {
         Text(
             text = currencySymbol,
-            fontSize = 20.sp,
-            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Normal,
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+            modifier = Modifier.alignByBaseline()
         )
-        Spacer(modifier = Modifier.weight(1f))
+        Spacer(modifier = Modifier.width(4.dp))
         Text(
             text = displayText,
             fontSize = 42.sp,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.End,
-            maxLines = 1
+            maxLines = 1,
+            modifier = Modifier
+                .testTag("input_display")
+                .alignByBaseline()
         )
     }
 }
@@ -271,9 +300,15 @@ private fun InputDisplay(displayText: String, currencySymbol: String) {
 fun DisplaySection(
     result: com.exchangecalc.app.model.ConversionResult?,
     rateDisplay: String?,
-    lastUpdated: Long?,
+    lastUpdatedDisplay: String?,
     isLoading: Boolean,
-    hasRates: Boolean
+    hasRates: Boolean,
+    manualRateEnabled: Boolean,
+    fromCurrency: com.exchangecalc.app.model.Currency,
+    toCurrency: com.exchangecalc.app.model.Currency,
+    manualRateText: String,
+    onToggleManualRate: (Boolean) -> Unit,
+    onManualRateChanged: (Double) -> Unit
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
@@ -283,7 +318,7 @@ fun DisplaySection(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 16.dp, horizontal = 20.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
+            horizontalAlignment = Alignment.End,
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             if (result != null) {
@@ -313,17 +348,175 @@ fun DisplaySection(
                 )
             }
 
-            if (lastUpdated != null) {
-                val dateStr = remember(lastUpdated) {
-                    val sdf = SimpleDateFormat("MMM d, yyyy HH:mm", Locale.getDefault())
-                    sdf.format(Date(lastUpdated))
-                }
+            if (lastUpdatedDisplay != null) {
                 Text(
-                    text = dateStr,
+                    text = lastUpdatedDisplay,
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f)
                 )
             }
+
+            // Manual Rate section
+            HorizontalDivider()
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = stringResource(R.string.manual_rate),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                )
+                Spacer(modifier = Modifier.weight(1f))
+                Switch(
+                    checked = manualRateEnabled,
+                    onCheckedChange = onToggleManualRate,
+                    colors = SwitchDefaults.colors(checkedTrackColor = SwapAccent)
+                )
+            }
+
+            if (manualRateEnabled) {
+                RateDrumRollPicker(
+                    fromCurrency = fromCurrency,
+                    toCurrency = toCurrency,
+                    initialRate = manualRateText,
+                    onRateChanged = onManualRateChanged
+                )
+            }
         }
     }
+}
+
+@Composable
+private fun RateDrumRollPicker(
+    fromCurrency: com.exchangecalc.app.model.Currency,
+    toCurrency: com.exchangecalc.app.model.Currency,
+    initialRate: String,
+    onRateChanged: (Double) -> Unit
+) {
+    var d0 by remember { mutableIntStateOf(0) }
+    var d1 by remember { mutableIntStateOf(0) }
+    var d2 by remember { mutableIntStateOf(0) }
+    var d3 by remember { mutableIntStateOf(0) }
+    var d4 by remember { mutableIntStateOf(0) }
+    var d5 by remember { mutableIntStateOf(0) }
+
+    fun parseRate() {
+        val value = initialRate.toDoubleOrNull() ?: return
+        val intPart = value.toInt() % 1000
+        d0 = (intPart / 100) % 10
+        d1 = (intPart / 10) % 10
+        d2 = intPart % 10
+        val decPart = value - value.toInt()
+        val decDigits = Math.round(decPart * 1000).toInt()
+        d3 = (decDigits / 100) % 10
+        d4 = (decDigits / 10) % 10
+        d5 = decDigits % 10
+    }
+
+    fun emitRate() {
+        val intValue = d0 * 100.0 + d1 * 10.0 + d2
+        val decValue = d3 * 0.1 + d4 * 0.01 + d5 * 0.001
+        onRateChanged(intValue + decValue)
+    }
+
+    LaunchedEffect(initialRate) { parseRate() }
+
+    Column(horizontalAlignment = Alignment.End) {
+        Text(
+            text = "1 ${fromCurrency.code} =",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+        )
+        Spacer(modifier = Modifier.height(4.dp))
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.End,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Spacer(modifier = Modifier.weight(1f))
+            DigitWheel(d0) { d0 = it; emitRate() }
+            DigitWheel(d1) { d1 = it; emitRate() }
+            DigitWheel(d2) { d2 = it; emitRate() }
+            Text(".", fontSize = 20.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 2.dp))
+            DigitWheel(d3) { d3 = it; emitRate() }
+            DigitWheel(d4) { d4 = it; emitRate() }
+            DigitWheel(d5) { d5 = it; emitRate() }
+            Text(
+                " ${toCurrency.code}",
+                style = MaterialTheme.typography.bodySmall,
+                fontWeight = FontWeight.SemiBold,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                modifier = Modifier.padding(start = 4.dp)
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun DigitWheel(value: Int, onValueChange: (Int) -> Unit) {
+    val items = (0..9).toList()
+    val listState = rememberLazyListState(initialFirstVisibleItemIndex = value)
+
+    LaunchedEffect(value) {
+        if (listState.firstVisibleItemIndex != value) {
+            listState.animateScrollToItem(value)
+        }
+    }
+
+    LaunchedEffect(listState.isScrollInProgress) {
+        if (!listState.isScrollInProgress) {
+            val idx = listState.firstVisibleItemIndex
+            if (idx in 0..9 && idx != value) {
+                onValueChange(idx)
+            }
+        }
+    }
+
+    Box(
+        modifier = Modifier
+            .width(32.dp)
+            .height(80.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        LazyColumn(
+            state = listState,
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            flingBehavior = rememberSnapFlingBehavior(lazyListState = listState)
+        ) {
+            items(items.size) { index ->
+                Box(
+                    modifier = Modifier
+                        .height(80.dp)
+                        .fillMaxWidth(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "$index",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun AdBannerView() {
+    AndroidView(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 4.dp),
+        factory = { context ->
+            AdView(context).apply {
+                setAdSize(AdSize.BANNER)
+                adUnitId = "ca-app-pub-4861952933639074/4526623890"
+                loadAd(AdRequest.Builder().build())
+            }
+        }
+    )
 }

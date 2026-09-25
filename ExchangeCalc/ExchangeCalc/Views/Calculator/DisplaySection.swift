@@ -23,7 +23,7 @@ struct DisplaySection: View {
                     .lineLimit(1)
                     .minimumScaleFactor(0.5)
             } else {
-                Text(isLoading ? LocaleManager.shared.localized("loading_rates") : (hasRates ? "-" : LocaleManager.shared.localized("no_rates")))
+                Text(isLoading ? String(localized: "loading_rates") : (hasRates ? "-" : String(localized: "no_rates")))
                     .font(.system(size: 36, weight: .bold, design: .rounded))
                     .foregroundStyle(.secondary)
             }
@@ -47,7 +47,7 @@ struct DisplaySection: View {
             }
 
             // Disclaimer
-            Text(LocaleManager.shared.localized("rate_disclaimer"))
+            Text(String(localized: "rate_disclaimer"))
                 .font(.system(size: 9))
                 .foregroundStyle(.tertiary)
                 .multilineTextAlignment(.trailing)
@@ -56,7 +56,7 @@ struct DisplaySection: View {
             Divider()
 
             HStack {
-                Text(LocaleManager.shared.localized("manual_rate"))
+                Text(String(localized: "manual_rate"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 Spacer()

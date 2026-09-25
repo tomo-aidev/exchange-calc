@@ -14,9 +14,9 @@ struct HistoryView: View {
             Group {
                 if histories.isEmpty {
                     ContentUnavailableView(
-                        LocaleManager.shared.localized("no_history"),
+                        String(localized: "no_history"),
                         systemImage: "clock.arrow.circlepath",
-                        description: Text(LocaleManager.shared.localized("no_history_description"))
+                        description: Text(String(localized: "no_history_description"))
                     )
                 } else {
                     List {
@@ -35,17 +35,17 @@ struct HistoryView: View {
                     }
                 }
             }
-            .navigationTitle(LocaleManager.shared.localized("history"))
+            .navigationTitle(String(localized: "history"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button(LocaleManager.shared.localized("back")) {
+                    Button(String(localized: "back")) {
                         onBack()
                     }
                 }
                 if !histories.isEmpty {
                     ToolbarItem(placement: .topBarTrailing) {
-                        Button(LocaleManager.shared.localized("delete_all"), role: .destructive) {
+                        Button(String(localized: "delete_all"), role: .destructive) {
                             for history in histories {
                                 modelContext.delete(history)
                             }

@@ -14,7 +14,10 @@ import java.math.RoundingMode
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.concurrent.TimeUnit
+import org.json.JSONArray
 import org.json.JSONObject
+
+data class PairRatePoint(val date: String, val rate: Double)
 
 class ExchangeRateService private constructor(context: Context) {
     private val prefs: SharedPreferences =
@@ -125,6 +128,59 @@ class ExchangeRateService private constructor(context: Context) {
             exchangeRate = exchangeRate,
             lastUpdated = lastUpdated
         )
+    }
+
+    suspend fun fetchPairHistory(from: Currency, to: Currency, days: Int = 90): List<PairRatePoint> {
+        val cacheKey = "pairHistory:${from.code}:${to.code}"
+        val cacheDateKey = "$cacheKey:date"
+
+        // Check cache
+        val cachedDate = prefs.getString(cacheDateKey, null)
+        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(java.util.Date())
+        if (cachedDate == today) {
+            val cachedJson = prefs.getString(cacheKey, null)
+            if (cachedJson != null) {
+                try {
+                    val arr = JSONArray(cachedJson)
+                    val points = mutableListOf<PairRatePoint>()
+                    for (i in 0 until arr.length()) {
+                        val obj = arr.getJSONObject(i)
+                        points.add(PairRatePoint(obj.getString("date"), obj.getDouble("rate")))
+                    }
+                    return points.sortedBy { it.date }
+                } catch (_: Exception) { /* fall through to fetch */ }
+            }
+        }
+
+        // Fetch from API
+        val url = "https://quickrate-api.getonnews.workers.dev/history?days=$days&from=${from.code}&to=${to.code}"
+        return withContext(Dispatchers.IO) {
+            try {
+                val request = Request.Builder().url(url).build()
+                val response = client.newCall(request).execute()
+                if (!response.isSuccessful) return@withContext emptyList()
+
+                val body = response.body?.string() ?: return@withContext emptyList()
+                val jsonObj = JSONObject(body)
+                val dataArr = jsonObj.getJSONArray("data")
+
+                val points = mutableListOf<PairRatePoint>()
+                for (i in 0 until dataArr.length()) {
+                    val item = dataArr.getJSONObject(i)
+                    points.add(PairRatePoint(item.getString("date"), item.getDouble("rate")))
+                }
+
+                // Cache the result
+                prefs.edit()
+                    .putString(cacheKey, dataArr.toString())
+                    .putString(cacheDateKey, today)
+                    .apply()
+
+                points.sortedBy { it.date }
+            } catch (_: Exception) {
+                emptyList()
+            }
+        }
     }
 
     private fun loadCachedRates() {

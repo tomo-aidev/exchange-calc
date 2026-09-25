@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ExchangeCalc</string>
-    <string name="app_title">ExchangeCalc</string>
+    <string name="app_name">TripRate</string>
+    <string name="app_title">TripRate</string>
     <string name="from_currency">From</string>
     <string name="to_currency">To</string>
     <string name="save">Save</string>
@@ -32,4 +32,15 @@
     <string name="paywall_feature_fast">Quick &amp; easy currency exchange</string>
     <string name="paywall_one_time">One-time purchase. Use forever.</string>
     <string name="paywall_purchase">Purchase</string>
+    <string name="manual_rate">Manual Rate</string>
+    <string name="language">Language</string>
+    <string name="system_default">System Default</string>
+    <string name="rate_chart">Rate Chart</string>
+    <string name="loading_chart">Loading chart\u2026</string>
+    <string name="no_chart_data">No chart data available</string>
+    <string name="days_90">90 days</string>
+    <string name="current">Current</string>
+    <string name="high">High</string>
+    <string name="low">Low</string>
+    <string name="change">Change</string>
 </resources>

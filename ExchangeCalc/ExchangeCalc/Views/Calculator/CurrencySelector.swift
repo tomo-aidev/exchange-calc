@@ -43,7 +43,7 @@ struct CurrencySelector: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(LocaleManager.shared.localized("close")) {
+                    Button(String(localized: "close")) {
                         dismiss()
                     }
                 }

@@ -52,29 +52,62 @@ class CalculatorViewModel(application: Application) : AndroidViewModel(applicati
     var showToCurrencyPicker by mutableStateOf(false)
         private set
 
+    var manualRateEnabled by mutableStateOf(false)
+        private set
+
+    var manualRateText by mutableStateOf("")
+        private set
+
     val inputAmount: BigDecimal
         get() = inputText.toBigDecimalOrNull() ?: BigDecimal.ZERO
+
+    private val effectiveRate: Double?
+        get() {
+            if (manualRateEnabled) {
+                val manual = manualRateText.toDoubleOrNull()
+                if (manual != null && manual > 0) return manual
+            }
+            val fromRate = exchangeRateService.currentRates[fromCurrency.code] ?: return null
+            val toRate = exchangeRateService.currentRates[toCurrency.code] ?: return null
+            if (fromRate == 0.0) return null
+            return toRate / fromRate
+        }
 
     val conversionResult: ConversionResult?
         get() {
             val amount = inputAmount
             if (amount <= BigDecimal.ZERO) return null
-            return exchangeRateService.convert(amount, fromCurrency, toCurrency)
+            val rate = effectiveRate ?: return null
+            val convertedAmount = amount.multiply(BigDecimal.valueOf(rate))
+                .setScale(toCurrency.decimalPlaces, RoundingMode.HALF_UP)
+            return ConversionResult(
+                inputAmount = amount,
+                convertedAmount = convertedAmount,
+                fromCurrency = fromCurrency,
+                toCurrency = toCurrency,
+                exchangeRate = rate,
+                lastUpdated = lastUpdated
+            )
         }
 
-    val rateDisplay: String?
-        get() {
-            val fromRate = exchangeRateService.currentRates[fromCurrency.code] ?: return null
-            val toRate = exchangeRateService.currentRates[toCurrency.code] ?: return null
-            if (fromRate == 0.0) return null
-            val rate = toRate / fromRate
-            return "1 ${fromCurrency.code} = ${"%.4f".format(rate)} ${toCurrency.code}"
-        }
+    var rateDisplay by mutableStateOf<String?>(null)
+        private set
 
-    val lastUpdated: Long? get() = exchangeRateService.lastUpdated
-    val isLoading: Boolean get() = exchangeRateService.isLoading
-    val hasRates: Boolean get() = exchangeRateService.hasRates
-    val lastError: String? get() = exchangeRateService.lastError
+    var lastUpdatedDisplay by mutableStateOf<String?>(null)
+        private set
+
+    var lastUpdated by mutableStateOf<Long?>(exchangeRateService.lastUpdated)
+        private set
+
+    var isLoading by mutableStateOf(false)
+        private set
+
+    var hasRates by mutableStateOf(exchangeRateService.hasRates)
+        private set
+
+    var lastError by mutableStateOf<String?>(null)
+        private set
+
     val remainingCount: Int get() = usageLimiter.remainingCount
     val isProUnlocked: Boolean get() = PurchaseManager.getInstance().isProUnlocked
 
@@ -84,9 +117,52 @@ class CalculatorViewModel(application: Application) : AndroidViewModel(applicati
     val histories = historyDao.getAllHistory()
         .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
+    private fun updateRateState() {
+        hasRates = exchangeRateService.hasRates
+        isLoading = exchangeRateService.isLoading
+        lastUpdated = exchangeRateService.lastUpdated
+        lastError = exchangeRateService.lastError
+        updateRateDisplay()
+    }
+
+    private fun updateRateDisplay() {
+        val rate = effectiveRate
+        rateDisplay = if (rate != null) {
+            "1 ${fromCurrency.code} = ${"%.4f".format(rate)} ${toCurrency.code}"
+        } else null
+
+        lastUpdatedDisplay = if (manualRateEnabled && manualRateText.toDoubleOrNull() != null) {
+            null // Manual rate - no timestamp
+        } else {
+            val ts = exchangeRateService.lastUpdated
+            if (ts != null) {
+                val sdf = java.text.SimpleDateFormat("MMM d, yyyy HH:mm", java.util.Locale.getDefault())
+                sdf.format(java.util.Date(ts))
+            } else null
+        }
+    }
+
+    fun toggleManualRate(enabled: Boolean) {
+        manualRateEnabled = enabled
+        if (enabled) {
+            val rate = effectiveRate
+            if (rate != null) {
+                manualRateText = "%.4f".format(rate)
+            }
+        }
+        updateRateDisplay()
+    }
+
+    fun setManualRate(rate: Double) {
+        manualRateText = "%.4f".format(rate)
+        updateRateDisplay()
+    }
+
     init {
         viewModelScope.launch {
+            isLoading = true
             exchangeRateService.fetchRatesIfNeeded()
+            updateRateState()
         }
     }
 
@@ -174,6 +250,7 @@ class CalculatorViewModel(application: Application) : AndroidViewModel(applicati
         toCurrency = temp
         inputText = "0"
         hasDecimalPoint = false
+        updateRateDisplay()
     }
 
     fun selectFromCurrency(currency: Currency) {
@@ -182,12 +259,14 @@ class CalculatorViewModel(application: Application) : AndroidViewModel(applicati
         inputText = "0"
         hasDecimalPoint = false
         showFromCurrencyPicker = false
+        updateRateDisplay()
     }
 
     fun selectToCurrency(currency: Currency) {
         if (currency == fromCurrency) return
         toCurrency = currency
         showToCurrencyPicker = false
+        updateRateDisplay()
     }
 
     fun openFromCurrencyPicker() { showFromCurrencyPicker = true }
@@ -243,11 +322,19 @@ class CalculatorViewModel(application: Application) : AndroidViewModel(applicati
     // Rate Refresh
 
     fun refreshRates() {
-        viewModelScope.launch { exchangeRateService.fetchRatesIfNeeded() }
+        viewModelScope.launch {
+            isLoading = true
+            exchangeRateService.fetchRatesIfNeeded()
+            updateRateState()
+        }
     }
 
     fun forceRefreshRates() {
-        viewModelScope.launch { exchangeRateService.forceRefresh() }
+        viewModelScope.launch {
+            isLoading = true
+            exchangeRateService.forceRefresh()
+            updateRateState()
+        }
     }
 
     // Paywall
