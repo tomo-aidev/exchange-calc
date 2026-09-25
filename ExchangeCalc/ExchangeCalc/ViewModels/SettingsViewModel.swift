@@ -10,6 +10,10 @@ enum AppLanguage: String, CaseIterable {
     case th = "th"
     case vi = "vi"
     case ru = "ru"
+    case id = "id"
+    case fr = "fr"
+    case de = "de"
+    case es = "es"
 
     var displayName: String {
         switch self {
@@ -22,6 +26,10 @@ enum AppLanguage: String, CaseIterable {
         case .th: return "ไทย"
         case .vi: return "Tiếng Việt"
         case .ru: return "Русский"
+        case .id: return "Bahasa Indonesia"
+        case .fr: return "Français"
+        case .de: return "Deutsch"
+        case .es: return "Español"
         }
     }
 }

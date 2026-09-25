@@ -3,14 +3,18 @@
   "strings" : {
     "app_title" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "QuickRate" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "TripRate" } },
         "ja" : { "stringUnit" : { "state" : "translated", "value" : "通貨両替電卓-旅行用" } },
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "환전 계산기-여행용" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "货币兑换计算器-旅行" } },
         "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "貨幣兌換計算器-旅行" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "เครื่องคิดเลขแลกเงิน-ท่องเที่ยว" } },
         "vi" : { "stringUnit" : { "state" : "translated", "value" : "Máy tính đổi tiền-Du lịch" } },
-        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Калькулятор валют-Путешествия" } }
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Калькулятор валют-Путешествия" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "TripRate" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "TripRate" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "TripRate" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "TripRate" } }
       }
     },
     "app_subtitle" : {
@@ -20,7 +24,13 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "여행용 환전 계산기" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "旅行货币兑换计算器" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "เครื่องคำนวณแลกเงินสำหรับเดินทาง" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Máy tính đổi tiền du lịch" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Máy tính đổi tiền du lịch" } },
+        "zh-Hant" : { "stringUnit" : { "state" : "translated", "value" : "旅行貨幣兌換計算器" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Калькулятор обмена валют для путешествий" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Kalkulator Kurs Mata Uang Perjalanan" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Change de devises pour voyager" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Wechselkursrechner für Reisen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Calculadora de cambio para viajes" } }
       }
     },
     "from_currency" : {
@@ -30,7 +40,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "변환 전" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "从" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "จาก" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Từ" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Từ" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Dari" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "De" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Von" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "De" } }
       }
     },
     "to_currency" : {
@@ -40,7 +54,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "변환 후" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "到" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "เป็น" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đến" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đến" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Ke" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Vers" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Nach" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "A" } }
       }
     },
     "save" : {
@@ -50,7 +68,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "저장" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "บันทึก" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Lưu" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Lưu" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Simpan" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Enregistrer" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Speichern" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Guardar" } }
       }
     },
     "saved" : {
@@ -60,7 +82,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "저장됨!" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已保存！" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "บันทึกแล้ว!" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đã lưu!" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đã lưu!" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Tersimpan!" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Enregistré !" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Gespeichert!" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "¡Guardado!" } }
       }
     },
     "history" : {
@@ -70,7 +96,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "기록" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "历史记录" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ประวัติ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Lịch sử" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Lịch sử" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Riwayat" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Historique" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Verlauf" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Historial" } }
       }
     },
     "settings" : {
@@ -80,7 +110,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "설정" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "设置" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ตั้งค่า" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Cài đặt" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Cài đặt" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Pengaturan" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réglages" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Einstellungen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Configuración" } }
       }
     },
     "refresh_rates" : {
@@ -90,7 +124,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "환율 업데이트" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "刷新汇率" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "รีเฟรชอัตรา" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Cập nhật tỷ giá" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Cập nhật tỷ giá" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Perbarui Kurs" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Actualiser les taux" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kurse aktualisieren" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Actualizar tasas" } }
       }
     },
     "loading_rates" : {
@@ -100,7 +138,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "환율 로딩 중..." } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "加载汇率中..." } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "กำลังโหลดอัตรา..." } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đang tải tỷ giá..." } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đang tải tỷ giá..." } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Memuat kurs..." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chargement des taux..." } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kurse werden geladen..." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cargando tasas..." } }
       }
     },
     "no_rates" : {
@@ -110,7 +152,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "환율 데이터 없음" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "暂无汇率数据" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ไม่มีข้อมูลอัตรา" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Không có dữ liệu tỷ giá" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Không có dữ liệu tỷ giá" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Kurs tidak tersedia" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun taux disponible" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Keine Kurse verfügbar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No hay tasas disponibles" } }
       }
     },
     "no_history" : {
@@ -120,7 +166,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "기록 없음" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "暂无记录" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ไม่มีประวัติ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Không có lịch sử" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Không có lịch sử" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Belum Ada Riwayat" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun historique" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kein Verlauf" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sin historial" } }
       }
     },
     "no_history_description" : {
@@ -130,7 +180,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "저장된 환산 결과가 여기에 표시됩니다" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "保存的兑换记录将显示在这里" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "การแปลงที่บันทึกไว้จะแสดงที่นี่" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Các chuyển đổi đã lưu sẽ hiển thị ở đây" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Các chuyển đổi đã lưu sẽ hiển thị ở đây" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Konversi yang Anda simpan akan muncul di sini" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Vos conversions enregistrées apparaîtront ici" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Deine gespeicherten Umrechnungen werden hier angezeigt" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Tus conversiones guardadas aparecerán aquí" } }
       }
     },
     "back" : {
@@ -140,7 +194,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "뒤로" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "返回" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "กลับ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Quay lại" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Quay lại" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Kembali" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Retour" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Zurück" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Atrás" } }
       }
     },
     "close" : {
@@ -150,7 +208,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "닫기" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关闭" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ปิด" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đóng" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đóng" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Tutup" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Fermer" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Schließen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cerrar" } }
       }
     },
     "delete_all" : {
@@ -160,7 +222,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "전체 삭제" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "全部删除" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ลบทั้งหมด" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Xóa tất cả" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Xóa tất cả" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Hapus Semua" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Tout supprimer" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Alle löschen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Eliminar todo" } }
       }
     },
     "default_currencies" : {
@@ -170,7 +236,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "기본 통화" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "默认货币" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "สกุลเงินเริ่มต้น" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Tiền tệ mặc định" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Tiền tệ mặc định" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Mata Uang Default" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Devises par défaut" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Standardwährungen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Monedas predeterminadas" } }
       }
     },
     "appearance" : {
@@ -180,7 +250,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "외관" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "外观" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ลักษณะ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Giao diện" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Giao diện" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Tampilan" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Apparence" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Darstellung" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Apariencia" } }
       }
     },
     "dark_mode" : {
@@ -190,7 +264,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "다크 모드" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "深色模式" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "โหมดมืด" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Chế độ tối" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Chế độ tối" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Mode Gelap" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Mode sombre" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Dunkler Modus" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Modo oscuro" } }
       }
     },
     "purchase" : {
@@ -200,7 +278,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "구매" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购买" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ซื้อ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Mua" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Mua" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Beli" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Acheter" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kaufen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Comprar" } }
       }
     },
     "pro_unlocked" : {
@@ -210,7 +292,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "프로 잠금 해제됨" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "已解锁专业版" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ปลดล็อคโปรแล้ว" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đã mở khóa Pro" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đã mở khóa Pro" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Pro Terbuka" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Version Pro débloquée" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Pro freigeschaltet" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Pro desbloqueado" } }
       }
     },
     "restore_purchase" : {
@@ -220,7 +306,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "구매 복원" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "恢复购买" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "กู้คืนการซื้อ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Khôi phục mua hàng" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Khôi phục mua hàng" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Pulihkan Pembelian" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Restaurer l'achat" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kauf wiederherstellen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Restaurar compra" } }
       }
     },
     "restore_success" : {
@@ -230,7 +320,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "구매가 복원되었습니다!" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购买已成功恢复！" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "กู้คืนการซื้อสำเร็จ!" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Khôi phục mua hàng thành công!" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Khôi phục mua hàng thành công!" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Pembelian berhasil dipulihkan!" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Achat restauré avec succès !" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kauf erfolgreich wiederhergestellt!" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "¡Compra restaurada correctamente!" } }
       }
     },
     "restore_failed" : {
@@ -240,7 +334,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "복원할 구매를 찾을 수 없습니다" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "未找到可恢复的购买" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ไม่พบการซื้อที่จะกู้คืน" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Không tìm thấy giao dịch để khôi phục" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Không tìm thấy giao dịch để khôi phục" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Tidak ditemukan pembelian untuk dipulihkan" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun achat trouvé à restaurer" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Keine Käufe zum Wiederherstellen gefunden" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se encontraron compras para restaurar" } }
       }
     },
     "about" : {
@@ -250,7 +348,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "정보" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "关于" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "เกี่ยวกับ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Giới thiệu" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Giới thiệu" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Tentang" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "À propos" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Info" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Acerca de" } }
       }
     },
     "rate_app" : {
@@ -260,7 +362,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "앱 평가하기" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "给应用评分" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ให้คะแนนแอป" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đánh giá ứng dụng" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đánh giá ứng dụng" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Beri Nilai Aplikasi Ini" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Noter cette application" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "App bewerten" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Valorar esta app" } }
       }
     },
     "version" : {
@@ -270,7 +376,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "버전" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "版本" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "เวอร์ชัน" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Phiên bản" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Phiên bản" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Versi" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Version" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Version" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Versión" } }
       }
     },
     "paywall_title" : {
@@ -280,7 +390,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "프로로 업그레이드" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "升级为专业版" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "อัปเกรดเป็นโปร" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Nâng cấp lên Pro" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Nâng cấp lên Pro" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Tingkatkan ke Pro" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Passer à la version Pro" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Auf Pro upgraden" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Actualizar a Pro" } }
       }
     },
     "paywall_feature_unlimited" : {
@@ -290,7 +404,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "무제한 환산" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "无限次兑换" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "แปลงได้ไม่จำกัด" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Chuyển đổi không giới hạn" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Chuyển đổi không giới hạn" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Konversi tanpa batas" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Conversions illimitées" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Unbegrenzte Umrechnungen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Conversiones ilimitadas" } }
       }
     },
     "paywall_feature_fast" : {
@@ -300,7 +418,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "빠르고 쉬운 환율 계산" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "快速简便的货币兑换" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "แลกเปลี่ยนเงินตราอย่างรวดเร็ว" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đổi tiền nhanh chóng và dễ dàng" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đổi tiền nhanh chóng và dễ dàng" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Konversi mata uang yang cepat dan mudah" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Change de devises rapide et simple" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Schneller und einfacher Währungsumtausch" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cambio de moneda rápido y sencillo" } }
       }
     },
     "paywall_one_time" : {
@@ -310,7 +432,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "일회 구매, 영구 사용" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "一次购买，永久使用" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ซื้อครั้งเดียว ใช้ตลอดไป" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Mua một lần, dùng mãi mãi" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Mua một lần, dùng mãi mãi" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Pembelian sekali bayar. Gunakan selamanya." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Achat unique. Valable à vie." } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Einmaliger Kauf. Für immer nutzbar." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Compra única. Úsala para siempre." } }
       }
     },
     "paywall_purchase" : {
@@ -320,7 +446,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "구매하기" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "购买" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ซื้อ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Mua" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Mua" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Beli" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Acheter" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kaufen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Comprar" } }
       }
     },
     "currency_usd" : {
@@ -330,7 +460,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "미국 달러" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "美元" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ดอลลาร์สหรัฐ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Mỹ" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Mỹ" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Dolar AS" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dollar américain" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "US-Dollar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Dólar estadounidense" } }
       }
     },
     "currency_eur" : {
@@ -340,7 +474,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "유로" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "欧元" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ยูโร" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Euro" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Euro" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Euro" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Euro" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Euro" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Euro" } }
       }
     },
     "currency_gbp" : {
@@ -350,7 +488,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "영국 파운드" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "英镑" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ปอนด์อังกฤษ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Bảng Anh" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Bảng Anh" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Pound Inggris" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Livre sterling" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Britisches Pfund" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Libra esterlina" } }
       }
     },
     "currency_jpy" : {
@@ -360,7 +502,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "일본 엔" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "日元" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "เยนญี่ปุ่น" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Yên Nhật" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Yên Nhật" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Yen Jepang" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Yen japonais" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Japanischer Yen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Yen japonés" } }
       }
     },
     "currency_krw" : {
@@ -370,7 +516,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "대한민국 원" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "韩元" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "วอนเกาหลีใต้" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Won Hàn Quốc" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Won Hàn Quốc" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Won Korea Selatan" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Won sud-coréen" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Südkoreanischer Won" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Won surcoreano" } }
       }
     },
     "currency_cny" : {
@@ -380,7 +530,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "중국 위안" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "人民币" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "หยวนจีน" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Nhân dân tệ" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Nhân dân tệ" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Yuan Tiongkok" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Yuan chinois" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Chinesischer Yuan" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Yuan chino" } }
       }
     },
     "currency_twd" : {
@@ -390,7 +544,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "대만 달러" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "新台币" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ดอลลาร์ไต้หวัน" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Đài Loan" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Đài Loan" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Dolar Taiwan" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dollar taïwanais" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Taiwan-Dollar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Dólar taiwanés" } }
       }
     },
     "currency_hkd" : {
@@ -400,7 +558,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "홍콩 달러" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "港元" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ดอลลาร์ฮ่องกง" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Hồng Kông" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Hồng Kông" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Dolar Hong Kong" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dollar de Hong Kong" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Hongkong-Dollar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Dólar de Hong Kong" } }
       }
     },
     "currency_thb" : {
@@ -410,7 +572,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "태국 바트" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "泰铢" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "บาทไทย" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Baht Thái" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Baht Thái" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Baht Thailand" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Baht thaïlandais" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Thailändischer Baht" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Baht tailandés" } }
       }
     },
     "currency_aud" : {
@@ -420,7 +586,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "호주 달러" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "澳元" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ดอลลาร์ออสเตรเลีย" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Úc" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Úc" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Dolar Australia" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dollar australien" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Australischer Dollar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Dólar australiano" } }
       }
     },
     "currency_php" : {
@@ -430,7 +600,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "필리핀 페소" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "菲律宾比索" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "เปโซฟิลิปปินส์" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Peso Philippines" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Peso Philippines" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Peso Filipina" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Peso philippin" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Philippinischer Peso" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Peso filipino" } }
       }
     },
     "currency_vnd" : {
@@ -440,7 +614,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "베트남 동" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "越南盾" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ดองเวียดนาม" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đồng Việt Nam" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đồng Việt Nam" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Dong Vietnam" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dong vietnamien" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Vietnamesischer Dong" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Dong vietnamita" } }
       }
     },
     "currency_idr" : {
@@ -450,7 +628,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "인도네시아 루피아" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "印尼卢比" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "รูเปียห์อินโดนีเซีย" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Rupiah Indonesia" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Rupiah Indonesia" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Rupiah Indonesia" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Roupie indonésienne" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Indonesische Rupiah" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Rupia indonesia" } }
       }
     },
     "currency_myr" : {
@@ -460,7 +642,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "말레이시아 링깃" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "马来西亚林吉特" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ริงกิตมาเลเซีย" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Ringgit Malaysia" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Ringgit Malaysia" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Ringgit Malaysia" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ringgit malaisien" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Malaysischer Ringgit" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ringgit malasio" } }
       }
     },
     "currency_sgd" : {
@@ -470,7 +656,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "싱가포르 달러" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "新加坡元" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ดอลลาร์สิงคโปร์" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Singapore" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Singapore" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Dolar Singapura" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dollar de Singapour" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Singapur-Dollar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Dólar de Singapur" } }
       }
     },
     "currency_cad" : {
@@ -480,7 +670,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "캐나다 달러" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "加拿大元" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ดอลลาร์แคนาดา" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Canada" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đô la Canada" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Dolar Kanada" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dollar canadien" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kanadischer Dollar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Dólar canadiense" } }
       }
     },
     "currency_inr" : {
@@ -490,7 +684,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "인도 루피" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "印度卢比" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "รูปีอินเดีย" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Rupee Ấn Độ" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Rupee Ấn Độ" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Rupee India" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Roupie indienne" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Indische Rupie" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Rupia india" } }
       }
     },
     "currency_chf" : {
@@ -500,7 +698,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "스위스 프랑" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "瑞士法郎" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ฟรังก์สวิส" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Franc Thụy Sĩ" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Franc Thụy Sĩ" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Franc Swiss" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Franc suisse" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Schweizer Franken" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Franco suizo" } }
       }
     },
     "currency_rub" : {
@@ -510,7 +712,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "러시아 루블" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "俄罗斯卢布" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "รูเบิลรัสเซีย" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Rúp Nga" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Rúp Nga" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Rubel Rusia" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Rouble russe" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Russischer Rubel" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Rublo ruso" } }
       }
     },
     "manual_rate" : {
@@ -520,7 +726,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "수동 환율" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "手动汇率" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "อัตราด้วยตนเอง" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Tỷ giá thủ công" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Tỷ giá thủ công" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Kurs Manual" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Taux manuel" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Manueller Kurs" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Tasa manual" } }
       }
     },
     "rate_disclaimer" : {
@@ -530,7 +740,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "표시된 환율은 참고용이며 실제 환율과 다를 수 있습니다." } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "显示汇率仅供参考，可能与实际兑换汇率不同。" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "อัตราแลกเปลี่ยนเป็นเพียงข้อมูลอ้างอิง อาจแตกต่างจากอัตราจริง" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Tỷ giá chỉ mang tính tham khảo và có thể khác với tỷ giá thực tế." } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Tỷ giá chỉ mang tính tham khảo và có thể khác với tỷ giá thực tế." } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Kurs hanya untuk referensi dan dapat berbeda dari kurs sebenarnya." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Les taux sont donnés à titre indicatif et peuvent différer des taux de change réels." } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Die Kurse dienen nur als Richtwert und können von den tatsächlichen Wechselkursen abweichen." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Las tasas son solo de referencia y pueden diferir de los tipos de cambio reales." } }
       }
     },
     "language" : {
@@ -540,7 +754,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "언어" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "语言" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ภาษา" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Ngôn ngữ" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Ngôn ngữ" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Bahasa" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Langue" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Sprache" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Idioma" } }
       }
     },
     "language_change_title" : {
@@ -550,7 +768,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "언어가 변경되었습니다" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "语言已更改" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "เปลี่ยนภาษาแล้ว" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đã thay đổi ngôn ngữ" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đã thay đổi ngôn ngữ" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Bahasa Diubah" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Langue modifiée" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Sprache geändert" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Idioma cambiado" } }
       }
     },
     "language_change_message" : {
@@ -560,7 +782,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "언어 변경을 적용하려면 앱을 다시 시작해주세요." } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "请重新启动应用以使语言更改生效。" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "กรุณาเปิดแอปใหม่เพื่อใช้การเปลี่ยนภาษา" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Vui lòng khởi động lại ứng dụng để thay đổi ngôn ngữ có hiệu lực." } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Vui lòng khởi động lại ứng dụng để thay đổi ngôn ngữ có hiệu lực." } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Silakan mulai ulang aplikasi agar perubahan bahasa diterapkan." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Veuillez redémarrer l'application pour appliquer le changement de langue." } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Bitte starte die App neu, damit die Sprachänderung wirksam wird." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Reinicia la aplicación para que el cambio de idioma surta efecto." } }
       }
     },
     "rate_chart" : {
@@ -570,7 +796,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "환율 차트" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "汇率走势" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "กราฟอัตรา" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Biểu đồ tỷ giá" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Biểu đồ tỷ giá" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Grafik Kurs" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Graphique des taux" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Kursdiagramm" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Gráfico de tasas" } }
       }
     },
     "loading_chart" : {
@@ -580,7 +810,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "차트 데이터 로딩 중..." } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "正在加载图表数据..." } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "กำลังโหลดข้อมูลกราฟ..." } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đang tải dữ liệu biểu đồ..." } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Đang tải dữ liệu biểu đồ..." } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Memuat data grafik..." } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chargement du graphique..." } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Diagrammdaten werden geladen..." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cargando datos del gráfico..." } }
       }
     },
     "no_chart_data" : {
@@ -590,7 +824,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "차트 데이터가 없습니다" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "暂无图表数据" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ไม่มีข้อมูลกราฟ" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Không có dữ liệu biểu đồ" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Không có dữ liệu biểu đồ" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Data grafik tidak tersedia" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucune donnée de graphique disponible" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Keine Diagrammdaten verfügbar" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No hay datos de gráfico disponibles" } }
       }
     },
     "days_90" : {
@@ -600,7 +838,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "90일" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "90天" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "90 วัน" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "90 ngày" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "90 ngày" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "90 Hari" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "90 jours" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "90 Tage" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "90 días" } }
       }
     },
     "current" : {
@@ -610,7 +852,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "현재" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "当前" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ปัจจุบัน" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Hiện tại" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Hiện tại" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Saat Ini" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Actuel" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Aktuell" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Actual" } }
       }
     },
     "high" : {
@@ -620,7 +866,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "최고" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "最高" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "สูงสุด" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Cao nhất" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Cao nhất" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Tertinggi" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Plus haut" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Hoch" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Máximo" } }
       }
     },
     "low" : {
@@ -630,7 +880,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "최저" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "最低" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ต่ำสุด" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Thấp nhất" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Thấp nhất" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Terendah" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Plus bas" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Tief" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Mínimo" } }
       }
     },
     "change" : {
@@ -640,7 +894,11 @@
         "ko" : { "stringUnit" : { "state" : "translated", "value" : "변동" } },
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "变动" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "เปลี่ยนแปลง" } },
-        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Thay đổi" } }
+        "vi" : { "stringUnit" : { "state" : "translated", "value" : "Thay đổi" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Perubahan" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Variation" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Veränderung" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Variación" } }
       }
     },
     "legal" : {
@@ -651,7 +909,11 @@
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "法律信息" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ข้อมูลทางกฎหมาย" } },
         "vi" : { "stringUnit" : { "state" : "translated", "value" : "Pháp lý" } },
-        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Правовая информация" } }
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Правовая информация" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Legal" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Mentions légales" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Rechtliches" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Legal" } }
       }
     },
     "terms_of_service" : {
@@ -662,7 +924,11 @@
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "使用条款" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "ข้อกำหนดการใช้งาน" } },
         "vi" : { "stringUnit" : { "state" : "translated", "value" : "Điều khoản sử dụng" } },
-        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Условия использования" } }
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Условия использования" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Ketentuan Layanan" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Conditions d'utilisation" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Nutzungsbedingungen" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Términos del servicio" } }
       }
     },
     "privacy_policy" : {
@@ -673,7 +939,11 @@
         "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "隐私政策" } },
         "th" : { "stringUnit" : { "state" : "translated", "value" : "นโยบายความเป็นส่วนตัว" } },
         "vi" : { "stringUnit" : { "state" : "translated", "value" : "Chính sách quyền riêng tư" } },
-        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Политика конфиденциальности" } }
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Политика конфиденциальности" } },
+        "id" : { "stringUnit" : { "state" : "translated", "value" : "Kebijakan Privasi" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Politique de confidentialité" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Datenschutzrichtlinie" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Política de privacidad" } }
       }
     }
   },

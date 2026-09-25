@@ -24,7 +24,7 @@ final class LocaleManager: Sendable {
         loadStrings()
     }
 
-    private let supportedLanguages = ["en", "ja", "ko", "zh-Hans", "zh-Hant", "th", "vi", "ru"]
+    private let supportedLanguages = ["en", "ja", "ko", "zh-Hans", "zh-Hant", "th", "vi", "ru", "id", "fr", "de", "es"]
 
     func setLanguage(_ lang: AppLanguage) {
         if lang == .system {

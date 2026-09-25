@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TripRate</string>
+    <string name="app_title">TripRate</string>
+    <string name="from_currency">De</string>
+    <string name="to_currency">Vers</string>
+    <string name="save">Enregistrer</string>
+    <string name="saved">Enregistré !</string>
+    <string name="history">Historique</string>
+    <string name="settings">Réglages</string>
+    <string name="refresh_rates">Actualiser les taux</string>
+    <string name="loading_rates">Chargement des taux…</string>
+    <string name="no_rates">Aucun taux disponible</string>
+    <string name="no_history">Aucun historique</string>
+    <string name="no_history_description">Vos conversions enregistrées apparaîtront ici</string>
+    <string name="back">Retour</string>
+    <string name="close">Fermer</string>
+    <string name="delete_all">Tout supprimer</string>
+    <string name="default_currencies">Devises par défaut</string>
+    <string name="appearance">Apparence</string>
+    <string name="dark_mode">Mode sombre</string>
+    <string name="purchase">Acheter</string>
+    <string name="pro_unlocked">Version Pro débloquée</string>
+    <string name="restore_purchase">Restaurer l\'achat</string>
+    <string name="restore_success">Achat restauré avec succès !</string>
+    <string name="restore_failed">Aucun achat trouvé à restaurer</string>
+    <string name="about">À propos</string>
+    <string name="rate_app">Noter cette application</string>
+    <string name="version">Version</string>
+    <string name="paywall_title">Passer à la version Pro</string>
+    <string name="paywall_feature_unlimited">Conversions illimitées</string>
+    <string name="paywall_feature_fast">Change de devises rapide &amp; simple</string>
+    <string name="paywall_one_time">Achat unique. Valable à vie.</string>
+    <string name="paywall_purchase">Acheter</string>
+    <string name="manual_rate">Taux manuel</string>
+    <string name="language">Langue</string>
+    <string name="system_default">Paramètre système</string>
+    <string name="rate_chart">Graphique des taux</string>
+    <string name="loading_chart">Chargement du graphique…</string>
+    <string name="no_chart_data">Aucune donnée de graphique disponible</string>
+    <string name="days_90">90 jours</string>
+    <string name="current">Actuel</string>
+    <string name="high">Plus haut</string>
+    <string name="low">Plus bas</string>
+    <string name="change">Variation</string>
+</resources>

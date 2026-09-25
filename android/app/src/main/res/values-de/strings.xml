@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TripRate</string>
+    <string name="app_title">TripRate</string>
+    <string name="from_currency">Von</string>
+    <string name="to_currency">Nach</string>
+    <string name="save">Speichern</string>
+    <string name="saved">Gespeichert!</string>
+    <string name="history">Verlauf</string>
+    <string name="settings">Einstellungen</string>
+    <string name="refresh_rates">Kurse aktualisieren</string>
+    <string name="loading_rates">Kurse werden geladen…</string>
+    <string name="no_rates">Keine Kurse verfügbar</string>
+    <string name="no_history">Kein Verlauf</string>
+    <string name="no_history_description">Deine gespeicherten Umrechnungen werden hier angezeigt</string>
+    <string name="back">Zurück</string>
+    <string name="close">Schließen</string>
+    <string name="delete_all">Alle löschen</string>
+    <string name="default_currencies">Standardwährungen</string>
+    <string name="appearance">Darstellung</string>
+    <string name="dark_mode">Dunkler Modus</string>
+    <string name="purchase">Kaufen</string>
+    <string name="pro_unlocked">Pro freigeschaltet</string>
+    <string name="restore_purchase">Kauf wiederherstellen</string>
+    <string name="restore_success">Kauf erfolgreich wiederhergestellt!</string>
+    <string name="restore_failed">Keine Käufe zum Wiederherstellen gefunden</string>
+    <string name="about">Info</string>
+    <string name="rate_app">App bewerten</string>
+    <string name="version">Version</string>
+    <string name="paywall_title">Auf Pro upgraden</string>
+    <string name="paywall_feature_unlimited">Unbegrenzte Umrechnungen</string>
+    <string name="paywall_feature_fast">Schneller &amp; einfacher Währungsumtausch</string>
+    <string name="paywall_one_time">Einmaliger Kauf. Für immer nutzbar.</string>
+    <string name="paywall_purchase">Kaufen</string>
+    <string name="manual_rate">Manueller Kurs</string>
+    <string name="language">Sprache</string>
+    <string name="system_default">Systemstandard</string>
+    <string name="rate_chart">Kursdiagramm</string>
+    <string name="loading_chart">Diagrammdaten werden geladen…</string>
+    <string name="no_chart_data">Keine Diagrammdaten verfügbar</string>
+    <string name="days_90">90 Tage</string>
+    <string name="current">Aktuell</string>
+    <string name="high">Hoch</string>
+    <string name="low">Tief</string>
+    <string name="change">Veränderung</string>
+</resources>

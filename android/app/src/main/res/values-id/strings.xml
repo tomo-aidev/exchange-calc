@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TripRate</string>
+    <string name="app_title">TripRate</string>
+    <string name="from_currency">Dari</string>
+    <string name="to_currency">Ke</string>
+    <string name="save">Simpan</string>
+    <string name="saved">Tersimpan!</string>
+    <string name="history">Riwayat</string>
+    <string name="settings">Pengaturan</string>
+    <string name="refresh_rates">Perbarui Kurs</string>
+    <string name="loading_rates">Memuat kurs…</string>
+    <string name="no_rates">Kurs tidak tersedia</string>
+    <string name="no_history">Belum Ada Riwayat</string>
+    <string name="no_history_description">Konversi yang Anda simpan akan muncul di sini</string>
+    <string name="back">Kembali</string>
+    <string name="close">Tutup</string>
+    <string name="delete_all">Hapus Semua</string>
+    <string name="default_currencies">Mata Uang Default</string>
+    <string name="appearance">Tampilan</string>
+    <string name="dark_mode">Mode Gelap</string>
+    <string name="purchase">Beli</string>
+    <string name="pro_unlocked">Pro Terbuka</string>
+    <string name="restore_purchase">Pulihkan Pembelian</string>
+    <string name="restore_success">Pembelian berhasil dipulihkan!</string>
+    <string name="restore_failed">Tidak ditemukan pembelian untuk dipulihkan</string>
+    <string name="about">Tentang</string>
+    <string name="rate_app">Beri Nilai Aplikasi Ini</string>
+    <string name="version">Versi</string>
+    <string name="paywall_title">Tingkatkan ke Pro</string>
+    <string name="paywall_feature_unlimited">Konversi tanpa batas</string>
+    <string name="paywall_feature_fast">Konversi mata uang yang cepat &amp; mudah</string>
+    <string name="paywall_one_time">Pembelian sekali bayar. Gunakan selamanya.</string>
+    <string name="paywall_purchase">Beli</string>
+    <string name="manual_rate">Kurs Manual</string>
+    <string name="language">Bahasa</string>
+    <string name="system_default">Default Sistem</string>
+    <string name="rate_chart">Grafik Kurs</string>
+    <string name="loading_chart">Memuat grafik…</string>
+    <string name="no_chart_data">Data grafik tidak tersedia</string>
+    <string name="days_90">90 hari</string>
+    <string name="current">Saat Ini</string>
+    <string name="high">Tertinggi</string>
+    <string name="low">Terendah</string>
+    <string name="change">Perubahan</string>
+</resources>
