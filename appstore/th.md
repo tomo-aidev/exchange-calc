@@ -13,7 +13,7 @@ TripRate ตอบคำถามนี้ให้คุณทันที
 เปิดแอป พิมพ์จำนวนเงิน ได้ผลลัพธ์เลย ไม่ต้องทำอะไรซับซ้อน ใช้ได้ทั้งหน้าแคชเชียร์และเคาน์เตอร์แลกเงิน
 
 รองรับ 19 สกุลเงิน
-USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, NZD, CAD, CHF, VND, PHP, MYR, IDR, RUB
+USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, INR, CAD, CHF, VND, PHP, MYR, IDR, RUB
 ครอบคลุมเอเชีย ยุโรป อเมริกาเหนือ โอเชียเนีย
 
 เรทอัปเดตทุกวัน

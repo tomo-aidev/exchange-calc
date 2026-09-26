@@ -14,7 +14,7 @@ TripRateは、そんな時にすぐ答えてくれる通貨両替計算アプリ
 
 19の主要通貨に対応
 旅行者がよく使う通貨を厳選：
-USD、EUR、GBP、JPY、CNY、KRW、THB、TWD、HKD、SGD、AUD、NZD、CAD、CHF、VND、PHP、MYR、IDR、RUB
+USD、EUR、GBP、JPY、CNY、KRW、THB、TWD、HKD、SGD、AUD、INR、CAD、CHF、VND、PHP、MYR、IDR、RUB
 アジア、欧州、北米、オセアニアの人気旅行先をカバー。
 
 毎日更新のリアルタイムレート

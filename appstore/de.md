@@ -13,7 +13,7 @@ Gib einfach einen Betrag ein und erhalte sofort das Ergebnis. Keine komplizierte
 
 19 BELIEBTE REISEWÄHRUNGEN
 Deckt die am häufigsten genutzten Währungen für internationale Reisende ab:
-USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, NZD, CAD, CHF, VND, PHP, MYR, IDR, RUB
+USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, INR, CAD, CHF, VND, PHP, MYR, IDR, RUB
 Von Asien über Europa bis Nordamerika und Ozeanien - alle Währungen, die du brauchst, in einer App.
 
 ECHTZEIT-WECHSELKURSE

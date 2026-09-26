@@ -13,7 +13,7 @@ Solo escribe una cantidad y obtén el resultado de inmediato. Sin menús complic
 
 19 MONEDAS DE VIAJE POPULARES
 Cubre las monedas más usadas por los viajeros internacionales:
-USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, NZD, CAD, CHF, VND, PHP, MYR, IDR, RUB
+USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, INR, CAD, CHF, VND, PHP, MYR, IDR, RUB
 De Asia a Europa, de América del Norte a Oceanía - todas las monedas que necesitas en una sola app.
 
 TASAS DE CAMBIO EN TIEMPO REAL

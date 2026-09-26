@@ -14,7 +14,7 @@ TripRate는 그 순간에 바로 답을 주는 환율 계산 앱입니다.
 
 19개 주요 통화 지원
 여행자가 자주 사용하는 통화를 엄선:
-USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, NZD, CAD, CHF, VND, PHP, MYR, IDR, RUB
+USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, INR, CAD, CHF, VND, PHP, MYR, IDR, RUB
 아시아, 유럽, 북미, 오세아니아 인기 여행지 통화를 모두 지원합니다.
 
 매일 업데이트되는 실시간 환율

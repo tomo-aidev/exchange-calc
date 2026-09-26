@@ -14,7 +14,7 @@ TripRate就是为解决这个问题而生的汇率计算App。
 
 支持19种热门旅行货币
 精选旅行者最常用的货币：
-USD、EUR、GBP、JPY、CNY、KRW、THB、TWD、HKD、SGD、AUD、NZD、CAD、CHF、VND、PHP、MYR、IDR、RUB
+USD、EUR、GBP、JPY、CNY、KRW、THB、TWD、HKD、SGD、AUD、INR、CAD、CHF、VND、PHP、MYR、IDR、RUB
 覆盖亚洲、欧洲、北美、大洋洲热门旅游目的地。
 
 每日更新实时汇率

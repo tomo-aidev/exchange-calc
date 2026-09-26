@@ -13,7 +13,7 @@ Tapez simplement un montant et obtenez le résultat immédiatement. Pas de menus
 
 19 DEVISES DE VOYAGE POPULAIRES
 Couvre les devises les plus utilisées par les voyageurs internationaux :
-USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, NZD, CAD, CHF, VND, PHP, MYR, IDR, RUB
+USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, INR, CAD, CHF, VND, PHP, MYR, IDR, RUB
 De l'Asie à l'Europe, de l'Amérique du Nord à l'Océanie - toutes les devises dont vous avez besoin dans une seule appli.
 
 TAUX DE CHANGE EN TEMPS RÉEL

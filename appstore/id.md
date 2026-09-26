@@ -13,7 +13,7 @@ Cukup ketik jumlahnya, hasilnya langsung muncul. Tanpa menu rumit, tanpa langkah
 
 19 MATA UANG PERJALANAN TERPOPULER
 Mencakup mata uang yang paling sering digunakan wisatawan internasional:
-USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, NZD, CAD, CHF, VND, PHP, MYR, IDR, RUB
+USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, INR, CAD, CHF, VND, PHP, MYR, IDR, RUB
 Dari Asia ke Eropa, Amerika Utara ke Oseania - semua mata uang yang Anda butuhkan dalam satu aplikasi.
 
 KURS REAL-TIME

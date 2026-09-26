@@ -13,7 +13,7 @@ TÍNH TỶ GIÁ NGAY
 Mở app, nhập số tiền, kết quả hiển thị ngay. Không thao tác phức tạp. Dùng được ở quầy thu ngân hay quầy đổi tiền.
 
 19 LOẠI TIỀN PHỔ BIẾN
-USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, NZD, CAD, CHF, VND, PHP, MYR, IDR, RUB
+USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, INR, CAD, CHF, VND, PHP, MYR, IDR, RUB
 Bao phủ châu Á, châu Âu, Bắc Mỹ, châu Đại Dương.
 
 TỶ GIÁ CẬP NHẬT HÀNG NGÀY

@@ -36,11 +36,10 @@ struct CalculatorView: View {
 
                 Spacer(minLength: 4)
 
-                // AdBannerView - hidden during screenshot capture
-                // AdBannerView()
-                //     .frame(height: 50)
-                //     .padding(.horizontal, 16)
-                //     .padding(.bottom, 4)
+                AdBannerView()
+                    .frame(height: 50)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 4)
 
                 NumericKeypad(
                     onDigit: viewModel.appendDigit,

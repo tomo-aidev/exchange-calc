@@ -13,7 +13,7 @@ TripRate мгновенно даст ответ.
 Откройте приложение, введите сумму - результат моментально. На кассе или у обменника - расчёт за секунду.
 
 19 ПОПУЛЯРНЫХ ВАЛЮТ
-USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, NZD, CAD, CHF, VND, PHP, MYR, IDR, RUB
+USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, INR, CAD, CHF, VND, PHP, MYR, IDR, RUB
 Азия, Европа, Северная Америка, Океания - все популярные направления.
 
 ЕЖЕДНЕВНОЕ ОБНОВЛЕНИЕ

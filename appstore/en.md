@@ -13,7 +13,7 @@ Just type an amount and get the result immediately. No complicated menus, no unn
 
 19 POPULAR TRAVEL CURRENCIES
 Covering the most-used currencies for international travelers:
-USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, NZD, CAD, CHF, VND, PHP, MYR, IDR, RUB
+USD, EUR, GBP, JPY, CNY, KRW, THB, TWD, HKD, SGD, AUD, INR, CAD, CHF, VND, PHP, MYR, IDR, RUB
 From Asia to Europe, North America to Oceania - all the currencies you need in one app.
 
 REAL-TIME EXCHANGE RATES
