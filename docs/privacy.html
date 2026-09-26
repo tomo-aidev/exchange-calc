@@ -18,11 +18,14 @@ function showLang(lang) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById('privacy-' + lang).classList.add('active');
 }
-window.onload = function() {
-  const lang = navigator.language.substring(0,2);
-  const supported = ['en','ja','ko','zh','th','vi','ru'];
-  showLang(supported.includes(lang) ? lang : 'en');
+function pickLang() {
+  const nav = (navigator.language || 'en').toLowerCase();
+  if (nav.startsWith('zh')) return /tw|hk|mo|hant/.test(nav) ? 'zhhant' : 'zh';
+  const base = nav.substring(0, 2);
+  const supported = ['en','ja','ko','th','vi','ru','id','fr','de','es'];
+  return supported.includes(base) ? base : 'en';
 }
+window.onload = function() { showLang(pickLang()); }
 </script>
 </head>
 <body>
@@ -30,95 +33,272 @@ window.onload = function() {
 <a href="#" onclick="showLang('en')">EN</a>|
 <a href="#" onclick="showLang('ja')">JA</a>|
 <a href="#" onclick="showLang('ko')">KO</a>|
-<a href="#" onclick="showLang('zh')">ZH</a>|
+<a href="#" onclick="showLang('zh')">简体</a>|
+<a href="#" onclick="showLang('zhhant')">繁體</a>|
 <a href="#" onclick="showLang('th')">TH</a>|
 <a href="#" onclick="showLang('vi')">VI</a>|
-<a href="#" onclick="showLang('ru')">RU</a>
+<a href="#" onclick="showLang('ru')">RU</a>|
+<a href="#" onclick="showLang('id')">ID</a>|
+<a href="#" onclick="showLang('fr')">FR</a>|
+<a href="#" onclick="showLang('de')">DE</a>|
+<a href="#" onclick="showLang('es')">ES</a>
 </div>
 
-<div id="privacy-en" class="section active">
+<div id="privacy-en" class="section active" lang="en">
 <h1>Privacy Policy</h1>
-<p>Last updated: April 7, 2026</p>
+<p>Last updated: September 26, 2026</p>
 <h2>1. Information We Collect</h2>
-<p>TripRate does not collect, store, or transmit any personal information. All conversion history and settings are stored locally on your device only.</p>
-<h2>2. Third-Party Services</h2>
-<p><strong>Google AdMob:</strong> The App uses Google AdMob to display advertisements. AdMob may collect device information, advertising identifiers, and usage data to serve personalized ads. Please refer to <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> for details.</p>
-<p><strong>Exchange Rate API:</strong> The App connects to our Cloudflare Workers proxy to retrieve exchange rate data. No personal information is sent with these requests.</p>
-<h2>3. Data Storage</h2>
-<p>All user data (conversion history, currency preferences, settings) is stored locally on your device using standard iOS/Android storage mechanisms. We do not have access to this data.</p>
-<h2>4. Children's Privacy</h2>
-<p>The App is not directed at children under 13. We do not knowingly collect personal information from children.</p>
-<h2>5. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy in the App.</p>
-<h2>6. Contact</h2>
-<p>For questions about this Privacy Policy, contact us at getonnews@gmail.com.</p>
+<p>TripRate has no user accounts, and we do not ask for or collect personal information such as your name, email address, phone number, contacts, photos, or precise location. Your conversion history and settings are stored only on your device. Some technical data is, however, processed by the third-party services described below.</p>
+<h2>2. Advertising (Google AdMob)</h2>
+<p>The App displays ads provided by Google AdMob. When an ad is requested, shown, or tapped, Google may collect device identifiers, advertising data (such as the ads shown), product interaction data (such as ad taps), approximate location derived from your IP address, and diagnostic data (such as crash and performance data). Google uses this data to serve and measure ads, for analytics, and, where permitted, to personalize ads. We do not receive this data and cannot access it. See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use our services</a>.</p>
+<h2>3. Exchange Rate Data</h2>
+<p>To show exchange rates, the App sends requests to our Cloudflare Workers service and, if it is unavailable, directly to the jsDelivr CDN and Cloudflare Pages. These requests contain the currency pair you select (when viewing the rate chart) and, like any internet request, your IP address and standard technical information (for example, app and OS version), which these providers receive in order to deliver the data. We do not use this information to identify you, and we do not store it or link it to you. These providers may process data in countries other than your own under their own privacy policies.</p>
+<h2>4. Data Storage, Retention and Deletion</h2>
+<p>Conversion history, currency preferences, and settings are stored locally on your device and are never sent to us. You can delete your history at any time from the History screen ("Delete All"), and all app data is removed when you delete the App. Because we hold no copy of your data, we cannot access, export, or delete it on your behalf; data held by Google is subject to Google's policies.</p>
+<h2>5. Your Choices</h2>
+<p>You can limit ad personalization or reset your advertising identifier in your device settings (iOS: Settings &gt; Privacy &amp; Security &gt; Tracking / Apple Advertising; Android: Settings &gt; Google &gt; Ads). Uninstalling the App stops all data processing by the advertising partner.</p>
+<h2>6. Children's Privacy</h2>
+<p>The App is not directed at children under 13 (or under the minimum age in your country). We do not knowingly collect personal information from children.</p>
+<h2>7. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. The latest version is always available at this URL, and the "Last updated" date will change.</p>
+<h2>8. Contact</h2>
+<p>getonnews@gmail.com</p>
 </div>
 
-<div id="privacy-ja" class="section">
+<div id="privacy-ja" class="section" lang="ja">
 <h1>プライバシーポリシー</h1>
-<p>最終更新日: 2026年4月7日</p>
+<p>最終更新日: 2026年9月26日</p>
 <h2>1. 収集する情報</h2>
-<p>TripRateは個人情報を収集、保存、送信しません。すべての変換履歴と設定はお使いの端末にのみ保存されます。</p>
-<h2>2. 第三者サービス</h2>
-<p><strong>Google AdMob:</strong> 本アプリはGoogle AdMobを使用して広告を表示します。AdMobはパーソナライズされた広告を配信するために、デバイス情報、広告識別子、使用データを収集する場合があります。詳細は<a href="https://policies.google.com/privacy">Googleのプライバシーポリシー</a>をご確認ください。</p>
-<p><strong>為替レートAPI:</strong> 本アプリは為替レートデータを取得するためにCloudflare Workersプロキシに接続します。これらのリクエストに個人情報は送信されません。</p>
-<h2>3. データの保存</h2>
-<p>すべてのユーザーデータ（変換履歴、通貨設定、アプリ設定）は、端末のローカルストレージに保存されます。当方がこれらのデータにアクセスすることはありません。</p>
-<h2>4. 児童のプライバシー</h2>
-<p>本アプリは13歳未満の児童を対象としていません。</p>
-<h2>5. ポリシーの変更</h2>
-<p>本プライバシーポリシーは随時更新する場合があります。</p>
-<h2>6. お問い合わせ</h2>
+<p>TripRateにはユーザーアカウントがなく、氏名、メールアドレス、電話番号、連絡先、写真、正確な位置情報などの個人情報を求めたり収集したりすることはありません。変換履歴と設定はお使いの端末内にのみ保存されます。ただし、以下の第三者サービスにより、一部の技術的データが処理されます。</p>
+<h2>2. 広告（Google AdMob）</h2>
+<p>本アプリはGoogle AdMobが提供する広告を表示します。広告のリクエスト、表示、タップの際に、Googleはデバイス識別子、広告データ（表示された広告など）、製品操作データ（広告のタップなど）、IPアドレスから推定される大まかな位置情報、診断データ（クラッシュ・パフォーマンスデータなど）を収集する場合があります。Googleはこれらを広告の配信・効果測定、分析、および法令上認められる場合にはパーソナライズ広告のために利用します。当方はこれらのデータを受け取らず、アクセスすることもできません。詳細は<a href="https://policies.google.com/privacy">Googleのプライバシーポリシー</a>および<a href="https://policies.google.com/technologies/partner-sites">Googleのサービスを使用するサイトやアプリからの情報のGoogleによる使用方法</a>をご確認ください。</p>
+<h2>3. 為替レートデータ</h2>
+<p>為替レートを表示するため、本アプリは当方のCloudflare Workersサービスにリクエストを送信し、利用できない場合はjsDelivr CDNおよびCloudflare Pagesに直接リクエストします。これらのリクエストには（レートチャート表示時に選択した）通貨ペアのほか、インターネット通信の性質上、IPアドレスや標準的な技術情報（アプリ・OSのバージョンなど）が含まれ、各事業者がデータ配信のために受信します。当方はこれらの情報を個人の特定に使用せず、保存や個人との紐付けも行いません。各事業者は、それぞれのプライバシーポリシーに従い、お客様の国以外でデータを処理する場合があります。</p>
+<p>外部送信される情報:</p>
+<ul>
+<li>送信先: Google LLC（AdMob） ／ 情報: デバイス識別子、広告データ、製品操作データ、IPアドレス由来の大まかな位置情報、診断データ ／ 目的: 広告の配信・効果測定、分析</li>
+<li>送信先: Cloudflare, Inc.（Workers、Pages）およびjsDelivr（CDN） ／ 情報: IPアドレス、通貨ペア、技術情報 ／ 目的: 為替レートデータの提供</li>
+</ul>
+<h2>4. データの保存・保持・削除</h2>
+<p>変換履歴、通貨設定、アプリ設定は端末内にのみ保存され、当方に送信されることはありません。履歴は「履歴」画面の「全削除」でいつでも削除でき、アプリを削除するとすべてのアプリデータが消去されます。当方はお客様のデータを保有していないため、当方を通じたデータの開示・エクスポート・削除はできません。Googleが保有するデータにはGoogleのポリシーが適用されます。</p>
+<h2>5. お客様の選択</h2>
+<p>端末の設定で、広告のパーソナライズを制限したり広告識別子をリセットしたりできます（iOS：設定 &gt; プライバシーとセキュリティ &gt; トラッキング／Apple広告、Android：設定 &gt; Google &gt; 広告）。アプリを削除すると、広告パートナーによるデータ処理はすべて停止します。</p>
+<h2>6. 児童のプライバシー</h2>
+<p>本アプリは13歳未満（またはお住まいの国・地域の最低年齢未満）の児童を対象としていません。児童から意図的に個人情報を収集することはありません。</p>
+<h2>7. ポリシーの変更</h2>
+<p>本ポリシーは随時更新する場合があります。最新版は常にこのURLで公開され、「最終更新日」が変更されます。</p>
+<h2>8. お問い合わせ</h2>
 <p>getonnews@gmail.com</p>
 </div>
 
-<div id="privacy-ko" class="section">
+<div id="privacy-ko" class="section" lang="ko">
 <h1>개인정보 처리방침</h1>
-<p>최종 업데이트: 2026년 4월 7일</p>
+<p>최종 업데이트: 2026년 9월 26일</p>
 <h2>1. 수집하는 정보</h2>
-<p>TripRate는 개인정보를 수집, 저장 또는 전송하지 않습니다. 모든 환산 기록과 설정은 사용자의 기기에만 저장됩니다.</p>
-<h2>2. 제3자 서비스</h2>
-<p><strong>Google AdMob:</strong> 광고 표시를 위해 Google AdMob을 사용합니다.</p>
-<h2>3. 연락처</h2>
+<p>TripRate에는 사용자 계정이 없으며, 이름·이메일 주소·전화번호·연락처·사진·정확한 위치 정보 등의 개인정보를 요구하거나 수집하지 않습니다. 환산 기록과 설정은 사용자의 기기에만 저장됩니다. 다만 아래의 제3자 서비스가 일부 기술 데이터를 처리합니다.</p>
+<h2>2. 광고(Google AdMob)</h2>
+<p>본 앱은 Google AdMob이 제공하는 광고를 표시합니다. 광고가 요청·표시·탭될 때 Google은 기기 식별자, 광고 데이터(표시된 광고 등), 제품 상호작용 데이터(광고 탭 등), IP 주소에서 추정되는 대략적인 위치, 진단 데이터(비정상 종료·성능 데이터 등)를 수집할 수 있습니다. Google은 이 데이터를 광고 게재 및 성과 측정, 분석, 그리고 허용되는 경우 맞춤 광고에 사용합니다. 당사는 이 데이터를 받거나 접근할 수 없습니다. 자세한 내용은 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>과 <a href="https://policies.google.com/technologies/partner-sites">Google 서비스를 사용하는 사이트 또는 앱의 정보를 Google이 사용하는 방식</a>을 참조하세요.</p>
+<h2>3. 환율 데이터</h2>
+<p>환율을 표시하기 위해 앱은 당사의 Cloudflare Workers 서비스에 요청을 보내며, 이용할 수 없을 때는 jsDelivr CDN과 Cloudflare Pages에 직접 요청합니다. 이러한 요청에는 (차트 표시 시 선택한) 통화 쌍과, 인터넷 통신의 특성상 IP 주소 및 표준 기술 정보(앱·OS 버전 등)가 포함되며 각 제공업체는 데이터 전달을 위해 이를 수신합니다. 당사는 이 정보를 개인 식별에 사용하지 않으며 저장하거나 개인과 연결하지 않습니다. 각 제공업체는 자체 개인정보처리방침에 따라 사용자의 국가 외에서 데이터를 처리할 수 있습니다.</p>
+<h2>4. 데이터 저장·보관·삭제</h2>
+<p>환산 기록, 통화 설정, 앱 설정은 기기에만 저장되며 당사로 전송되지 않습니다. 기록 화면의 "전체 삭제"로 언제든지 삭제할 수 있고, 앱을 삭제하면 모든 앱 데이터가 제거됩니다. 당사는 사용자의 데이터를 보유하지 않으므로 대신 열람·내보내기·삭제할 수 없으며, Google이 보유한 데이터에는 Google의 정책이 적용됩니다.</p>
+<h2>5. 사용자의 선택</h2>
+<p>기기 설정에서 광고 개인화를 제한하거나 광고 식별자를 재설정할 수 있습니다(iOS: 설정 &gt; 개인정보 보호 및 보안 &gt; 추적 / Apple 광고, Android: 설정 &gt; Google &gt; 광고). 앱을 삭제하면 광고 파트너의 데이터 처리가 모두 중단됩니다.</p>
+<h2>6. 아동의 개인정보</h2>
+<p>본 앱은 만 13세 미만(또는 거주 국가의 최소 연령 미만) 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
+<h2>7. 방침의 변경</h2>
+<p>본 방침은 수시로 업데이트될 수 있으며, 최신 버전은 항상 이 URL에 게시되고 "최종 업데이트" 날짜가 변경됩니다.</p>
+<h2>8. 문의</h2>
 <p>getonnews@gmail.com</p>
 </div>
 
-<div id="privacy-zh" class="section">
+<div id="privacy-zh" class="section" lang="zh-Hans">
 <h1>隐私政策</h1>
-<p>最后更新：2026年4月7日</p>
+<p>最后更新：2026年9月26日</p>
 <h2>1. 我们收集的信息</h2>
-<p>TripRate不收集、存储或传输任何个人信息。所有换算历史和设置仅存储在您的设备上。</p>
-<h2>2. 第三方服务</h2>
-<p><strong>Google AdMob：</strong>本应用使用Google AdMob展示广告。</p>
-<h2>3. 联系方式</h2>
+<p>TripRate没有用户账户，我们不会要求或收集姓名、电子邮件地址、电话号码、通讯录、照片或精确位置等个人信息。换算历史和设置仅存储在您的设备上。不过，下列第三方服务会处理部分技术数据。</p>
+<h2>2. 广告（Google AdMob）</h2>
+<p>本应用展示由Google AdMob提供的广告。当广告被请求、展示或点击时，Google可能收集设备标识符、广告数据（如展示的广告）、产品交互数据（如广告点击）、根据IP地址推断的大致位置以及诊断数据（如崩溃和性能数据）。Google将这些数据用于投放和衡量广告、分析，并在法律允许的情况下用于个性化广告。我们不会接收或访问这些数据。详情请参阅<a href="https://policies.google.com/privacy">Google隐私权政策</a>以及<a href="https://policies.google.com/technologies/partner-sites">Google如何使用使用我们服务的网站或应用中的信息</a>。</p>
+<h2>3. 汇率数据</h2>
+<p>为显示汇率，应用会向我们的Cloudflare Workers服务发送请求；如该服务不可用，则直接请求jsDelivr CDN和Cloudflare Pages。这些请求包含（查看图表时）您所选的货币对，并且与任何互联网请求一样包含您的IP地址和标准技术信息（如应用/系统版本），相关服务商为传送数据而接收这些信息。我们不使用这些信息识别您的身份，也不存储或将其与您关联。各服务商可能依据其自身的隐私政策在您所在国家/地区以外处理数据。</p>
+<h2>4. 数据存储、保留与删除</h2>
+<p>换算历史、货币偏好和设置仅存储在您的设备本地，不会发送给我们。您可随时在“历史”页面通过“全部删除”清除历史记录；删除应用后，所有应用数据将一并移除。由于我们不持有您的数据，无法代为访问、导出或删除；Google持有的数据适用Google的政策。</p>
+<h2>5. 您的选择</h2>
+<p>您可以在设备设置中限制广告个性化或重置广告标识符（iOS：设置 &gt; 隐私与安全性 &gt; 跟踪 / Apple广告；Android：设置 &gt; Google &gt; 广告）。卸载应用即可停止广告合作伙伴的所有数据处理。</p>
+<h2>6. 儿童隐私</h2>
+<p>本应用不面向13岁以下（或您所在国家/地区最低年龄以下）的儿童，我们不会有意收集儿童的个人信息。</p>
+<h2>7. 政策变更</h2>
+<p>我们可能不时更新本政策。最新版本始终发布于此网址，“最后更新”日期也会随之变更。</p>
+<h2>8. 联系方式</h2>
 <p>getonnews@gmail.com</p>
 </div>
 
-<div id="privacy-th" class="section">
+<div id="privacy-zhhant" class="section" lang="zh-Hant">
+<h1>隱私權政策</h1>
+<p>最後更新：2026年9月26日</p>
+<h2>1. 我們蒐集的資訊</h2>
+<p>TripRate 沒有使用者帳號，我們不會要求或蒐集姓名、電子郵件地址、電話號碼、聯絡人、照片或精確位置等個人資訊。換算記錄與設定僅儲存在您的裝置上。不過，下列第三方服務會處理部分技術資料。</p>
+<h2>2. 廣告（Google AdMob）</h2>
+<p>本 App 顯示由 Google AdMob 提供的廣告。當廣告被請求、顯示或點擊時，Google 可能蒐集裝置識別碼、廣告資料（例如顯示的廣告）、產品互動資料（例如廣告點擊）、由 IP 位址推估的大致位置，以及診斷資料（例如當機與效能資料）。Google 將這些資料用於投放與評估廣告、分析，並在法律允許時用於個人化廣告。我們不會接收或存取這些資料。詳情請參閱 <a href="https://policies.google.com/privacy">Google 隱私權政策</a>，以及<a href="https://policies.google.com/technologies/partner-sites">Google 如何使用使用我們服務的網站或應用程式中的資訊</a>。</p>
+<h2>3. 匯率資料</h2>
+<p>為顯示匯率，App 會向我們的 Cloudflare Workers 服務發送請求；若該服務無法使用，則直接請求 jsDelivr CDN 與 Cloudflare Pages。這些請求包含（檢視圖表時）您所選的貨幣對，並與所有網路請求一樣包含您的 IP 位址與標準技術資訊（例如 App／系統版本），相關服務供應商為傳送資料而接收這些資訊。我們不會使用這些資訊識別您的身分，也不會儲存或將其與您關聯。各服務供應商可能依其自身隱私權政策，在您所在國家／地區以外處理資料。</p>
+<h2>4. 資料儲存、保留與刪除</h2>
+<p>換算記錄、貨幣偏好與設定僅儲存在您的裝置本機，不會傳送給我們。您可隨時在「記錄」畫面透過「全部刪除」清除記錄；刪除 App 後，所有 App 資料也會一併移除。由於我們不持有您的資料，無法代為存取、匯出或刪除；Google 所持有的資料適用 Google 的政策。</p>
+<h2>5. 您的選擇</h2>
+<p>您可以在裝置設定中限制廣告個人化或重設廣告識別碼（iOS：設定 &gt; 隱私權與安全性 &gt; 追蹤／Apple 廣告；Android：設定 &gt; Google &gt; 廣告）。解除安裝 App 即可停止廣告合作夥伴的所有資料處理。</p>
+<h2>6. 兒童隱私</h2>
+<p>本 App 不以 13 歲以下（或您所在國家／地區最低年齡以下）的兒童為對象，我們不會刻意蒐集兒童的個人資訊。</p>
+<h2>7. 政策變更</h2>
+<p>我們可能不時更新本政策。最新版本一律公布於此網址，「最後更新」日期亦會隨之變更。</p>
+<h2>8. 聯絡方式</h2>
+<p>getonnews@gmail.com</p>
+</div>
+
+<div id="privacy-th" class="section" lang="th">
 <h1>นโยบายความเป็นส่วนตัว</h1>
-<p>อัปเดตล่าสุด: 7 เมษายน 2026</p>
-<h2>1. ข้อมูลที่เราเก็บรวบรวม</h2>
-<p>TripRate ไม่เก็บ จัดเก็บ หรือส่งข้อมูลส่วนบุคคลใดๆ ประวัติการแปลงและการตั้งค่าทั้งหมดจะถูกเก็บไว้ในอุปกรณ์ของคุณเท่านั้น</p>
-<h2>2. บริการของบุคคลที่สาม</h2>
-<p><strong>Google AdMob:</strong> แอปใช้ Google AdMob เพื่อแสดงโฆษณา</p>
+<p>อัปเดตล่าสุด: 26 กันยายน 2026</p>
+<h2>1. ข้อมูลที่เรารวบรวม</h2>
+<p>TripRate ไม่มีบัญชีผู้ใช้ และเราไม่ขอหรือเก็บข้อมูลส่วนบุคคล เช่น ชื่อ อีเมล หมายเลขโทรศัพท์ รายชื่อติดต่อ รูปภาพ หรือตำแหน่งที่แม่นยำ ประวัติการแปลงและการตั้งค่าจะถูกเก็บไว้ในอุปกรณ์ของคุณเท่านั้น อย่างไรก็ตาม บริการของบุคคลที่สามด้านล่างอาจประมวลผลข้อมูลทางเทคนิคบางส่วน</p>
+<h2>2. โฆษณา (Google AdMob)</h2>
+<p>แอปแสดงโฆษณาที่ให้บริการโดย Google AdMob เมื่อมีการขอ แสดง หรือแตะโฆษณา Google อาจเก็บตัวระบุอุปกรณ์ ข้อมูลโฆษณา (เช่น โฆษณาที่แสดง) ข้อมูลการโต้ตอบกับผลิตภัณฑ์ (เช่น การแตะโฆษณา) ตำแหน่งโดยประมาณที่ได้จากที่อยู่ IP และข้อมูลการวินิจฉัย (เช่น ข้อมูลข้อขัดข้องและประสิทธิภาพ) Google ใช้ข้อมูลนี้เพื่อแสดงและวัดผลโฆษณา วิเคราะห์ และเมื่อกฎหมายอนุญาต เพื่อปรับโฆษณาให้ตรงกับผู้ใช้ เราไม่ได้รับและไม่สามารถเข้าถึงข้อมูลนี้ ดูรายละเอียดได้ที่<a href="https://policies.google.com/privacy">นโยบายความเป็นส่วนตัวของ Google</a> และ<a href="https://policies.google.com/technologies/partner-sites">วิธีที่ Google ใช้ข้อมูลจากเว็บไซต์หรือแอปที่ใช้บริการของเรา</a></p>
+<h2>3. ข้อมูลอัตราแลกเปลี่ยน</h2>
+<p>เพื่อแสดงอัตราแลกเปลี่ยน แอปส่งคำขอไปยังบริการ Cloudflare Workers ของเรา และหากใช้งานไม่ได้จะขอโดยตรงจาก jsDelivr CDN และ Cloudflare Pages คำขอเหล่านี้ประกอบด้วยคู่สกุลเงินที่คุณเลือก (เมื่อดูกราฟ) และเช่นเดียวกับคำขออินเทอร์เน็ตทั่วไป จะมีที่อยู่ IP และข้อมูลทางเทคนิคมาตรฐาน (เช่น เวอร์ชันแอป/ระบบปฏิบัติการ) ซึ่งผู้ให้บริการเหล่านี้ได้รับเพื่อส่งมอบข้อมูล เราไม่ใช้ข้อมูลนี้เพื่อระบุตัวตนของคุณ และไม่จัดเก็บหรือเชื่อมโยงกับตัวคุณ ผู้ให้บริการแต่ละรายอาจประมวลผลข้อมูลนอกประเทศของคุณตามนโยบายความเป็นส่วนตัวของตน</p>
+<h2>4. การจัดเก็บ การเก็บรักษา และการลบข้อมูล</h2>
+<p>ประวัติการแปลง การตั้งค่าสกุลเงิน และการตั้งค่าแอปถูกเก็บไว้ในอุปกรณ์ของคุณเท่านั้นและไม่ถูกส่งถึงเรา คุณลบประวัติได้ทุกเมื่อจากหน้าประวัติด้วย "ลบทั้งหมด" และข้อมูลแอปทั้งหมดจะถูกลบเมื่อคุณลบแอป เนื่องจากเราไม่ได้เก็บข้อมูลของคุณ เราจึงไม่สามารถเข้าถึง ส่งออก หรือลบข้อมูลแทนคุณได้ ข้อมูลที่ Google เก็บอยู่ภายใต้นโยบายของ Google</p>
+<h2>5. ตัวเลือกของคุณ</h2>
+<p>คุณสามารถจำกัดการปรับโฆษณาให้ตรงกับผู้ใช้หรือรีเซ็ตตัวระบุโฆษณาได้ในการตั้งค่าอุปกรณ์ (iOS: การตั้งค่า &gt; ความเป็นส่วนตัวและความปลอดภัย &gt; การติดตาม / โฆษณาของ Apple, Android: การตั้งค่า &gt; Google &gt; โฆษณา) การลบแอปจะหยุดการประมวลผลข้อมูลทั้งหมดโดยพันธมิตรโฆษณา</p>
+<h2>6. ความเป็นส่วนตัวของเด็ก</h2>
+<p>แอปนี้ไม่ได้มุ่งเป้าไปที่เด็กอายุต่ำกว่า 13 ปี (หรืออายุขั้นต่ำในประเทศของคุณ) และเราไม่เก็บข้อมูลส่วนบุคคลของเด็กโดยเจตนา</p>
+<h2>7. การเปลี่ยนแปลงนโยบาย</h2>
+<p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว เวอร์ชันล่าสุดจะเผยแพร่ที่ URL นี้เสมอ และวันที่ "อัปเดตล่าสุด" จะเปลี่ยนไป</p>
+<h2>8. ติดต่อเรา</h2>
+<p>getonnews@gmail.com</p>
 </div>
 
-<div id="privacy-vi" class="section">
+<div id="privacy-vi" class="section" lang="vi">
 <h1>Chính sách quyền riêng tư</h1>
-<p>Cập nhật lần cuối: 7 tháng 4 năm 2026</p>
+<p>Cập nhật lần cuối: 26 tháng 9 năm 2026</p>
 <h2>1. Thông tin chúng tôi thu thập</h2>
-<p>TripRate không thu thập, lưu trữ hoặc truyền bất kỳ thông tin cá nhân nào. Tất cả lịch sử chuyển đổi và cài đặt chỉ được lưu trữ trên thiết bị của bạn.</p>
-<h2>2. Dịch vụ bên thứ ba</h2>
-<p><strong>Google AdMob:</strong> Ứng dụng sử dụng Google AdMob để hiển thị quảng cáo.</p>
+<p>TripRate không có tài khoản người dùng và chúng tôi không yêu cầu hay thu thập thông tin cá nhân như họ tên, email, số điện thoại, danh bạ, ảnh hoặc vị trí chính xác. Lịch sử chuyển đổi và cài đặt chỉ được lưu trên thiết bị của bạn. Tuy nhiên, các dịch vụ bên thứ ba dưới đây có thể xử lý một số dữ liệu kỹ thuật.</p>
+<h2>2. Quảng cáo (Google AdMob)</h2>
+<p>Ứng dụng hiển thị quảng cáo do Google AdMob cung cấp. Khi quảng cáo được yêu cầu, hiển thị hoặc nhấn vào, Google có thể thu thập mã định danh thiết bị, dữ liệu quảng cáo (như quảng cáo đã hiển thị), dữ liệu tương tác sản phẩm (như lượt nhấn quảng cáo), vị trí gần đúng suy ra từ địa chỉ IP và dữ liệu chẩn đoán (như dữ liệu sự cố và hiệu năng). Google dùng dữ liệu này để phân phối và đo lường quảng cáo, phân tích và, khi pháp luật cho phép, cá nhân hóa quảng cáo. Chúng tôi không nhận và không thể truy cập dữ liệu này. Xem <a href="https://policies.google.com/privacy">Chính sách quyền riêng tư của Google</a> và <a href="https://policies.google.com/technologies/partner-sites">Cách Google sử dụng thông tin từ các trang web hoặc ứng dụng sử dụng dịch vụ của chúng tôi</a>.</p>
+<h2>3. Dữ liệu tỷ giá</h2>
+<p>Để hiển thị tỷ giá, ứng dụng gửi yêu cầu đến dịch vụ Cloudflare Workers của chúng tôi và, nếu không khả dụng, trực tiếp đến jsDelivr CDN và Cloudflare Pages. Các yêu cầu này chứa cặp tiền tệ bạn chọn (khi xem biểu đồ) và, như mọi yêu cầu Internet, địa chỉ IP cùng thông tin kỹ thuật tiêu chuẩn (như phiên bản ứng dụng/hệ điều hành) mà các nhà cung cấp nhận để chuyển dữ liệu. Chúng tôi không dùng thông tin này để nhận dạng bạn, không lưu trữ hay liên kết với bạn. Các nhà cung cấp có thể xử lý dữ liệu ngoài quốc gia của bạn theo chính sách riêng của họ.</p>
+<h2>4. Lưu trữ, lưu giữ và xóa dữ liệu</h2>
+<p>Lịch sử chuyển đổi, tùy chọn tiền tệ và cài đặt chỉ được lưu cục bộ trên thiết bị và không được gửi cho chúng tôi. Bạn có thể xóa lịch sử bất cứ lúc nào tại màn hình Lịch sử bằng "Xóa tất cả"; toàn bộ dữ liệu ứng dụng sẽ bị xóa khi bạn gỡ ứng dụng. Vì chúng tôi không giữ dữ liệu của bạn nên không thể truy cập, xuất hay xóa thay bạn; dữ liệu do Google nắm giữ tuân theo chính sách của Google.</p>
+<h2>5. Lựa chọn của bạn</h2>
+<p>Bạn có thể hạn chế cá nhân hóa quảng cáo hoặc đặt lại mã định danh quảng cáo trong cài đặt thiết bị (iOS: Cài đặt &gt; Quyền riêng tư &amp; Bảo mật &gt; Theo dõi / Quảng cáo của Apple; Android: Cài đặt &gt; Google &gt; Quảng cáo). Gỡ cài đặt ứng dụng sẽ dừng mọi việc xử lý dữ liệu của đối tác quảng cáo.</p>
+<h2>6. Quyền riêng tư của trẻ em</h2>
+<p>Ứng dụng không hướng đến trẻ em dưới 13 tuổi (hoặc độ tuổi tối thiểu tại quốc gia của bạn) và chúng tôi không cố ý thu thập thông tin cá nhân của trẻ em.</p>
+<h2>7. Thay đổi chính sách</h2>
+<p>Chúng tôi có thể cập nhật chính sách này theo thời gian. Phiên bản mới nhất luôn được đăng tại URL này và ngày "Cập nhật lần cuối" sẽ thay đổi.</p>
+<h2>8. Liên hệ</h2>
+<p>getonnews@gmail.com</p>
 </div>
 
-<div id="privacy-ru" class="section">
+<div id="privacy-ru" class="section" lang="ru">
 <h1>Политика конфиденциальности</h1>
-<p>Последнее обновление: 7 апреля 2026 г.</p>
-<h2>1. Собираемая информация</h2>
-<p>TripRate не собирает, не хранит и не передает никакую личную информацию. Вся история конвертации и настройки хранятся только на вашем устройстве.</p>
-<h2>2. Сторонние сервисы</h2>
-<p><strong>Google AdMob:</strong> Приложение использует Google AdMob для показа рекламы.</p>
+<p>Последнее обновление: 26 сентября 2026 г.</p>
+<h2>1. Какую информацию мы собираем</h2>
+<p>В TripRate нет учётных записей, и мы не запрашиваем и не собираем личную информацию, такую как имя, адрес электронной почты, номер телефона, контакты, фотографии или точное местоположение. История конвертации и настройки хранятся только на вашем устройстве. Однако некоторые технические данные обрабатываются сторонними сервисами, описанными ниже.</p>
+<h2>2. Реклама (Google AdMob)</h2>
+<p>Приложение показывает рекламу, предоставляемую Google AdMob. При запросе, показе или нажатии на рекламу Google может собирать идентификаторы устройства, рекламные данные (например, показанные объявления), данные о взаимодействии (например, нажатия на рекламу), приблизительное местоположение по IP-адресу и диагностические данные (например, данные о сбоях и производительности). Google использует эти данные для показа и оценки рекламы, аналитики и, если это разрешено законом, для персонализации рекламы. Мы не получаем эти данные и не имеем к ним доступа. Подробнее — в <a href="https://policies.google.com/privacy">Политике конфиденциальности Google</a> и на странице <a href="https://policies.google.com/technologies/partner-sites">«Как Google использует информацию с сайтов и из приложений, использующих наши сервисы»</a>.</p>
+<h2>3. Данные о курсах валют</h2>
+<p>Для показа курсов приложение отправляет запросы на наш сервис Cloudflare Workers, а если он недоступен — напрямую в CDN jsDelivr и Cloudflare Pages. Эти запросы содержат выбранную вами валютную пару (при просмотре графика) и, как любой интернет-запрос, ваш IP-адрес и стандартные технические сведения (например, версию приложения/ОС), которые получают эти поставщики для доставки данных. Мы не используем эту информацию для вашей идентификации, не храним её и не связываем с вами. Поставщики могут обрабатывать данные за пределами вашей страны в соответствии со своими политиками конфиденциальности.</p>
+<h2>4. Хранение, срок хранения и удаление данных</h2>
+<p>История конвертации, валютные предпочтения и настройки хранятся только на вашем устройстве и нам не передаются. Историю можно удалить в любой момент на экране «История» кнопкой «Удалить всё», а при удалении приложения удаляются все его данные. Поскольку у нас нет ваших данных, мы не можем получить к ним доступ, экспортировать или удалить их за вас; на данные, которыми располагает Google, распространяются правила Google.</p>
+<h2>5. Ваш выбор</h2>
+<p>В настройках устройства вы можете ограничить персонализацию рекламы или сбросить рекламный идентификатор (iOS: Настройки &gt; Конфиденциальность и безопасность &gt; Отслеживание / Реклама Apple; Android: Настройки &gt; Google &gt; Реклама). Удаление приложения прекращает всю обработку данных рекламным партнёром.</p>
+<h2>6. Конфиденциальность детей</h2>
+<p>Приложение не предназначено для детей младше 13 лет (или младше минимального возраста в вашей стране), и мы сознательно не собираем личную информацию детей.</p>
+<h2>7. Изменения политики</h2>
+<p>Мы можем время от времени обновлять эту политику. Актуальная версия всегда доступна по этому адресу, а дата «Последнее обновление» изменится.</p>
+<h2>8. Контакты</h2>
+<p>getonnews@gmail.com</p>
+</div>
+
+<div id="privacy-id" class="section" lang="id">
+<h1>Kebijakan Privasi</h1>
+<p>Terakhir diperbarui: 26 September 2026</p>
+<h2>1. Informasi yang Kami Kumpulkan</h2>
+<p>TripRate tidak memiliki akun pengguna, dan kami tidak meminta atau mengumpulkan informasi pribadi seperti nama, alamat email, nomor telepon, kontak, foto, atau lokasi presisi. Riwayat konversi dan pengaturan hanya disimpan di perangkat Anda. Namun, layanan pihak ketiga berikut dapat memproses sebagian data teknis.</p>
+<h2>2. Iklan (Google AdMob)</h2>
+<p>Aplikasi menampilkan iklan yang disediakan oleh Google AdMob. Saat iklan diminta, ditampilkan, atau diketuk, Google dapat mengumpulkan pengenal perangkat, data iklan (misalnya iklan yang ditampilkan), data interaksi produk (misalnya ketukan pada iklan), perkiraan lokasi dari alamat IP, dan data diagnostik (misalnya data crash dan performa). Google menggunakan data ini untuk menayangkan dan mengukur iklan, analitik, dan, bila diizinkan, mempersonalisasi iklan. Kami tidak menerima maupun mengakses data ini. Lihat <a href="https://policies.google.com/privacy">Kebijakan Privasi Google</a> dan <a href="https://policies.google.com/technologies/partner-sites">Cara Google menggunakan informasi dari situs atau aplikasi yang menggunakan layanan kami</a>.</p>
+<h2>3. Data Kurs</h2>
+<p>Untuk menampilkan kurs, aplikasi mengirim permintaan ke layanan Cloudflare Workers kami dan, jika tidak tersedia, langsung ke CDN jsDelivr dan Cloudflare Pages. Permintaan ini berisi pasangan mata uang yang Anda pilih (saat melihat grafik) dan, seperti permintaan internet pada umumnya, alamat IP serta informasi teknis standar (misalnya versi aplikasi/OS) yang diterima penyedia tersebut untuk mengirimkan data. Kami tidak menggunakan informasi ini untuk mengidentifikasi Anda, tidak menyimpannya, dan tidak mengaitkannya dengan Anda. Penyedia dapat memproses data di luar negara Anda sesuai kebijakan privasi masing-masing.</p>
+<h2>4. Penyimpanan, Retensi, dan Penghapusan Data</h2>
+<p>Riwayat konversi, preferensi mata uang, dan pengaturan disimpan secara lokal di perangkat Anda dan tidak dikirim kepada kami. Anda dapat menghapus riwayat kapan saja melalui layar Riwayat dengan "Hapus Semua", dan seluruh data aplikasi akan terhapus saat Anda menghapus aplikasi. Karena kami tidak menyimpan data Anda, kami tidak dapat mengakses, mengekspor, atau menghapusnya atas nama Anda; data yang dipegang Google tunduk pada kebijakan Google.</p>
+<h2>5. Pilihan Anda</h2>
+<p>Anda dapat membatasi personalisasi iklan atau mengatur ulang pengenal iklan di pengaturan perangkat (iOS: Pengaturan &gt; Privasi &amp; Keamanan &gt; Pelacakan / Iklan Apple; Android: Setelan &gt; Google &gt; Iklan). Menghapus aplikasi menghentikan seluruh pemrosesan data oleh mitra iklan.</p>
+<h2>6. Privasi Anak</h2>
+<p>Aplikasi ini tidak ditujukan untuk anak di bawah 13 tahun (atau usia minimum di negara Anda) dan kami tidak dengan sengaja mengumpulkan informasi pribadi anak.</p>
+<h2>7. Perubahan Kebijakan</h2>
+<p>Kami dapat memperbarui kebijakan ini dari waktu ke waktu. Versi terbaru selalu tersedia di URL ini dan tanggal "Terakhir diperbarui" akan berubah.</p>
+<h2>8. Kontak</h2>
+<p>getonnews@gmail.com</p>
+</div>
+
+<div id="privacy-fr" class="section" lang="fr">
+<h1>Politique de confidentialité</h1>
+<p>Dernière mise à jour : 26 septembre 2026</p>
+<h2>1. Informations que nous collectons</h2>
+<p>TripRate n'a pas de comptes utilisateurs et nous ne demandons ni ne collectons d'informations personnelles telles que nom, adresse e-mail, numéro de téléphone, contacts, photos ou localisation précise. L'historique des conversions et les réglages sont stockés uniquement sur votre appareil. Certaines données techniques sont toutefois traitées par les services tiers décrits ci-dessous.</p>
+<h2>2. Publicité (Google AdMob)</h2>
+<p>L'application affiche des publicités fournies par Google AdMob. Lorsqu'une publicité est demandée, affichée ou touchée, Google peut collecter des identifiants d'appareil, des données publicitaires (par exemple les annonces affichées), des données d'interaction avec le produit (par exemple les touches sur une annonce), une localisation approximative déduite de votre adresse IP et des données de diagnostic (par exemple des données de plantage et de performance). Google utilise ces données pour diffuser et mesurer les publicités, à des fins d'analyse et, lorsque la loi le permet, pour personnaliser les annonces. Nous ne recevons pas ces données et n'y avons pas accès. Consultez la <a href="https://policies.google.com/privacy">Politique de confidentialité de Google</a> et <a href="https://policies.google.com/technologies/partner-sites">Comment Google utilise les informations provenant de sites ou d'applications qui utilisent nos services</a>.</p>
+<h2>3. Données de taux de change</h2>
+<p>Pour afficher les taux, l'application envoie des requêtes à notre service Cloudflare Workers et, s'il est indisponible, directement au CDN jsDelivr et à Cloudflare Pages. Ces requêtes contiennent la paire de devises que vous sélectionnez (pour le graphique) et, comme toute requête Internet, votre adresse IP et des informations techniques standard (par exemple la version de l'application/du système), que ces prestataires reçoivent pour fournir les données. Nous n'utilisons pas ces informations pour vous identifier et ne les stockons pas ni ne les associons à vous. Ces prestataires peuvent traiter des données en dehors de votre pays selon leurs propres politiques de confidentialité.</p>
+<h2>4. Stockage, conservation et suppression des données</h2>
+<p>L'historique des conversions, les préférences de devises et les réglages sont stockés localement sur votre appareil et ne nous sont jamais transmis. Vous pouvez supprimer votre historique à tout moment depuis l'écran Historique avec « Tout supprimer », et toutes les données de l'application sont effacées lorsque vous la supprimez. Comme nous ne détenons pas vos données, nous ne pouvons pas y accéder, les exporter ou les supprimer à votre place ; les données détenues par Google sont soumises aux politiques de Google.</p>
+<h2>5. Vos choix</h2>
+<p>Vous pouvez limiter la personnalisation des publicités ou réinitialiser votre identifiant publicitaire dans les réglages de votre appareil (iOS : Réglages &gt; Confidentialité et sécurité &gt; Suivi / Publicités Apple ; Android : Paramètres &gt; Google &gt; Annonces). Désinstaller l'application met fin à tout traitement de données par le partenaire publicitaire.</p>
+<h2>6. Confidentialité des enfants</h2>
+<p>L'application ne s'adresse pas aux enfants de moins de 13 ans (ou de moins de l'âge minimum de votre pays) et nous ne collectons pas sciemment d'informations personnelles auprès d'enfants.</p>
+<h2>7. Modifications de cette politique</h2>
+<p>Nous pouvons mettre à jour cette politique de temps à autre. La dernière version est toujours disponible à cette adresse et la date de « Dernière mise à jour » sera modifiée.</p>
+<h2>8. Contact</h2>
+<p>getonnews@gmail.com</p>
+</div>
+
+<div id="privacy-de" class="section" lang="de">
+<h1>Datenschutzerklärung</h1>
+<p>Zuletzt aktualisiert: 26. September 2026</p>
+<h2>1. Welche Informationen wir erfassen</h2>
+<p>TripRate hat keine Benutzerkonten, und wir fragen keine personenbezogenen Daten wie Name, E-Mail-Adresse, Telefonnummer, Kontakte, Fotos oder genauen Standort ab und erfassen sie auch nicht. Umrechnungsverlauf und Einstellungen werden ausschließlich auf deinem Gerät gespeichert. Einige technische Daten werden jedoch von den unten beschriebenen Drittanbietern verarbeitet.</p>
+<h2>2. Werbung (Google AdMob)</h2>
+<p>Die App zeigt Werbung von Google AdMob an. Wenn Werbung angefordert, angezeigt oder angetippt wird, kann Google Geräte-Kennungen, Werbedaten (z. B. angezeigte Anzeigen), Daten zur Produktinteraktion (z. B. Antippen von Anzeigen), einen aus der IP-Adresse abgeleiteten ungefähren Standort sowie Diagnosedaten (z. B. Absturz- und Leistungsdaten) erfassen. Google nutzt diese Daten, um Werbung auszuliefern und zu messen, für Analysen und – soweit gesetzlich zulässig – zur Personalisierung von Anzeigen. Wir erhalten diese Daten nicht und haben keinen Zugriff darauf. Weitere Informationen findest du in der <a href="https://policies.google.com/privacy">Datenschutzerklärung von Google</a> und unter <a href="https://policies.google.com/technologies/partner-sites">Wie Google Informationen von Websites oder Apps verwendet, die unsere Dienste nutzen</a>.</p>
+<h2>3. Wechselkursdaten</h2>
+<p>Zur Anzeige von Wechselkursen sendet die App Anfragen an unseren Cloudflare-Workers-Dienst und, falls dieser nicht verfügbar ist, direkt an das jsDelivr-CDN und Cloudflare Pages. Diese Anfragen enthalten das von dir gewählte Währungspaar (bei der Kursdiagramm-Ansicht) sowie – wie jede Internetanfrage – deine IP-Adresse und übliche technische Angaben (z. B. App-/Betriebssystemversion), die diese Anbieter zur Datenlieferung empfangen. Wir nutzen diese Informationen nicht, um dich zu identifizieren, speichern sie nicht und verknüpfen sie nicht mit dir. Die Anbieter können Daten gemäß ihren eigenen Datenschutzerklärungen auch außerhalb deines Landes verarbeiten.</p>
+<h2>4. Speicherung, Aufbewahrung und Löschung</h2>
+<p>Umrechnungsverlauf, Währungspräferenzen und Einstellungen werden lokal auf deinem Gerät gespeichert und nie an uns übermittelt. Du kannst deinen Verlauf jederzeit im Bildschirm „Verlauf“ mit „Alle löschen“ entfernen; beim Löschen der App werden alle App-Daten entfernt. Da wir keine Daten von dir besitzen, können wir sie weder einsehen noch exportieren oder für dich löschen; für Daten, die Google hält, gelten die Richtlinien von Google.</p>
+<h2>5. Deine Wahlmöglichkeiten</h2>
+<p>In den Geräteeinstellungen kannst du die Anzeigenpersonalisierung einschränken oder deine Werbe-ID zurücksetzen (iOS: Einstellungen &gt; Datenschutz &amp; Sicherheit &gt; Tracking / Apple-Werbung; Android: Einstellungen &gt; Google &gt; Werbung). Wenn du die App deinstallierst, endet jede Datenverarbeitung durch den Werbepartner.</p>
+<h2>6. Datenschutz für Kinder</h2>
+<p>Die App richtet sich nicht an Kinder unter 13 Jahren (oder unter dem Mindestalter in deinem Land). Wir erfassen wissentlich keine personenbezogenen Daten von Kindern.</p>
+<h2>7. Änderungen dieser Richtlinie</h2>
+<p>Wir können diese Richtlinie von Zeit zu Zeit aktualisieren. Die aktuelle Version ist stets unter dieser URL abrufbar, und das Datum „Zuletzt aktualisiert“ ändert sich.</p>
+<h2>8. Kontakt</h2>
+<p>getonnews@gmail.com</p>
+</div>
+
+<div id="privacy-es" class="section" lang="es">
+<h1>Política de privacidad</h1>
+<p>Última actualización: 26 de septiembre de 2026</p>
+<h2>1. Información que recopilamos</h2>
+<p>TripRate no tiene cuentas de usuario y no solicitamos ni recopilamos información personal como nombre, correo electrónico, número de teléfono, contactos, fotos o ubicación precisa. El historial de conversiones y los ajustes se almacenan únicamente en tu dispositivo. No obstante, los servicios de terceros descritos a continuación pueden procesar algunos datos técnicos.</p>
+<h2>2. Publicidad (Google AdMob)</h2>
+<p>La app muestra anuncios proporcionados por Google AdMob. Cuando se solicita, se muestra o se toca un anuncio, Google puede recopilar identificadores del dispositivo, datos publicitarios (por ejemplo, los anuncios mostrados), datos de interacción con el producto (por ejemplo, toques en anuncios), una ubicación aproximada derivada de tu dirección IP y datos de diagnóstico (por ejemplo, datos de fallos y rendimiento). Google utiliza estos datos para entregar y medir anuncios, con fines analíticos y, cuando la ley lo permite, para personalizar anuncios. Nosotros no recibimos estos datos ni tenemos acceso a ellos. Consulta la <a href="https://policies.google.com/privacy">Política de privacidad de Google</a> y <a href="https://policies.google.com/technologies/partner-sites">Cómo utiliza Google la información de sitios o aplicaciones que usan nuestros servicios</a>.</p>
+<h2>3. Datos de tipos de cambio</h2>
+<p>Para mostrar los tipos de cambio, la app envía solicitudes a nuestro servicio Cloudflare Workers y, si no está disponible, directamente a la CDN jsDelivr y a Cloudflare Pages. Estas solicitudes contienen el par de divisas que seleccionas (al ver el gráfico) y, como cualquier solicitud de Internet, tu dirección IP e información técnica estándar (por ejemplo, la versión de la app o del sistema), que estos proveedores reciben para entregar los datos. No usamos esta información para identificarte ni la almacenamos ni la vinculamos contigo. Los proveedores pueden procesar datos fuera de tu país según sus propias políticas de privacidad.</p>
+<h2>4. Almacenamiento, conservación y eliminación de datos</h2>
+<p>El historial de conversiones, las preferencias de divisas y los ajustes se almacenan localmente en tu dispositivo y nunca se nos envían. Puedes borrar tu historial en cualquier momento desde la pantalla Historial con «Eliminar todo», y todos los datos de la app se eliminan al desinstalarla. Como no conservamos tus datos, no podemos acceder a ellos, exportarlos ni eliminarlos por ti; los datos que tiene Google se rigen por las políticas de Google.</p>
+<h2>5. Tus opciones</h2>
+<p>Puedes limitar la personalización de anuncios o restablecer tu identificador publicitario en los ajustes del dispositivo (iOS: Ajustes &gt; Privacidad y seguridad &gt; Rastreo / Publicidad de Apple; Android: Ajustes &gt; Google &gt; Anuncios). Al desinstalar la app se detiene todo el procesamiento de datos por parte del socio publicitario.</p>
+<h2>6. Privacidad de los menores</h2>
+<p>La app no está dirigida a menores de 13 años (ni a menores de la edad mínima de tu país) y no recopilamos a sabiendas información personal de menores.</p>
+<h2>7. Cambios en esta política</h2>
+<p>Podemos actualizar esta política de vez en cuando. La versión más reciente siempre está disponible en esta URL y la fecha de «Última actualización» cambiará.</p>
+<h2>8. Contacto</h2>
+<p>getonnews@gmail.com</p>
 </div>
 
 </body>
